@@ -161,6 +161,13 @@
                   <div class="text-[11px] text-tet-red font-semibold mt-0.5">349.000đ <span class="text-stone-400 font-normal">| Sỉ 329K</span></div>
                 </div>
               </a>
+              <a href="#product-bd5" onclick="goToProduct('bd5')" class="flex items-center gap-3 px-4 py-3 hover:bg-red-50 hover:text-tet-red transition border-b border-stone-100/70 group/item">
+                <img src="images/bd5-cat-tuong.jpg?v=bd5" class="w-10 h-10 rounded-lg object-cover border border-stone-200 flex-shrink-0 group-hover/item:border-tet-red">
+                <div>
+                  <div class="font-bold text-xs text-stone-900 group-hover/item:text-tet-red">TẾT CÁT TƯỜNG (BD5)</div>
+                  <div class="text-[11px] text-tet-red font-semibold mt-0.5">359.000đ <span class="text-stone-400 font-normal">| Sỉ 329K</span></div>
+                </div>
+              </a>
               <a href="#product-bd2" onclick="goToProduct('bd2')" class="flex items-center gap-3 px-4 py-3 hover:bg-red-50 hover:text-tet-red transition border-b border-stone-100/70 group/item">
                 <img src="images/bd2-linh-duong-thuong-cat.jpg" class="w-10 h-10 rounded-lg object-cover border border-stone-200 flex-shrink-0 group-hover/item:border-tet-red">
                 <div>
@@ -175,18 +182,11 @@
                   <div class="text-[11px] text-tet-red font-semibold mt-0.5">409.000đ <span class="text-stone-400 font-normal">| Sỉ 389K</span></div>
                 </div>
               </a>
-              <a href="#product-bd4" onclick="goToProduct('bd4')" class="flex items-center gap-3 px-4 py-3 hover:bg-red-50 hover:text-tet-red transition border-b border-stone-100/70 group/item">
+              <a href="#product-bd4" onclick="goToProduct('bd4')" class="flex items-center gap-3 px-4 py-3 hover:bg-red-50 hover:text-tet-red transition group/item">
                 <img src="images/bd4-tinh-hoa-hoi-tu.jpg" class="w-10 h-10 rounded-lg object-cover border border-stone-200 flex-shrink-0 group-hover/item:border-tet-red">
                 <div>
                   <div class="font-bold text-xs text-stone-900 group-hover/item:text-tet-red">TINH HOA HỘI TỤ (BD4)</div>
                   <div class="text-[11px] text-tet-red font-semibold mt-0.5">559.000đ <span class="text-stone-400 font-normal">| Sỉ 529K</span></div>
-                </div>
-              </a>
-              <a href="#product-bd5" onclick="goToProduct('bd5')" class="flex items-center gap-3 px-4 py-3 hover:bg-red-50 hover:text-tet-red transition group/item">
-                <img src="images/bd5-cat-tuong.jpg?v=bd5" class="w-10 h-10 rounded-lg object-cover border border-stone-200 flex-shrink-0 group-hover/item:border-tet-red">
-                <div>
-                  <div class="font-bold text-xs text-stone-900 group-hover/item:text-tet-red">TẾT CÁT TƯỜNG (BD5)</div>
-                  <div class="text-[11px] text-tet-red font-semibold mt-0.5">359.000đ <span class="text-stone-400 font-normal">| Sỉ 329K</span></div>
                 </div>
               </a>
             </div>
@@ -397,7 +397,36 @@
         </div>
       </div>
 
-      <!-- SP 2: LINH DƯƠNG THƯỞNG CÁT (MÃ BD2) -->
+      <!-- SP 2: TẾT CÁT TƯỜNG (MÃ BD5) -->
+      <div id="product-bd5" onclick="openModalBD5()" class="product-card bg-white rounded-2xl overflow-hidden border border-stone-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" data-category="duoi-600k">
+        <div class="relative overflow-hidden aspect-[4/5] bg-stone-100">
+          <img src="images/bd5-cat-tuong.jpg?v=bd5" alt="TẾT CÁT TƯỜNG - Mã BD5" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+          <!-- Nhãn Hot & Mã SP trên góc trái -->
+          <div class="absolute top-2.5 left-2.5 flex flex-col gap-1">
+            <span class="bg-red-700 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">Mới</span>
+            <span class="bg-amber-400 text-tet-darkred text-[10px] font-extrabold px-2 py-0.5 rounded shadow">Mã BD5</span>
+          </div>
+          <!-- Badge 5 ảnh -->
+          <span class="absolute bottom-2 right-2 bg-stone-900/80 backdrop-blur-sm text-white text-[10px] font-medium px-2 py-0.5 rounded-full flex items-center gap-1 shadow">
+            <i class="fa-solid fa-images text-amber-300"></i> 5 ảnh
+          </span>
+        </div>
+        <div class="p-3.5 sm:p-4 text-center flex-1 flex flex-col justify-between bg-white">
+          <h3 class="font-serif text-sm sm:text-base font-bold text-stone-900 group-hover:text-tet-red transition leading-snug">
+            TẾT CÁT TƯỜNG
+          </h3>
+          <div class="mt-2.5 pt-2 border-t border-stone-100 space-y-1">
+            <div class="text-xs text-stone-600">
+              Giá lẻ: <strong class="text-stone-900 font-bold text-xs sm:text-sm">359.000đ</strong>
+            </div>
+            <div class="text-xs font-bold text-tet-red">
+              Giá sỉ: <span class="text-sm sm:text-base font-extrabold">329.000đ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SP 3: LINH DƯƠNG THƯỞNG CÁT (MÃ BD2) -->
       <div id="product-bd2" onclick="openModalBD2()" class="product-card bg-white rounded-2xl overflow-hidden border border-stone-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" data-category="duoi-600k">
         <div class="relative overflow-hidden aspect-[4/5] bg-stone-100">
           <img src="images/bd2-linh-duong-thuong-cat.jpg" alt="LINH DƯƠNG THƯỞNG CÁT - Mã BD2" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
@@ -426,7 +455,7 @@
         </div>
       </div>
 
-      <!-- SP 3: ĐẠI CÁT ĐẠI LỢI (MÃ BD3) -->
+      <!-- SP 4: ĐẠI CÁT ĐẠI LỢI (MÃ BD3) -->
       <div id="product-bd3" onclick="openModalBD3()" class="product-card bg-white rounded-2xl overflow-hidden border border-stone-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" data-category="duoi-600k">
         <div class="relative overflow-hidden aspect-[4/5] bg-stone-100">
           <img src="images/bd3-dai-cat-dai-loi.jpg" alt="ĐẠI CÁT ĐẠI LỢI - Mã BD3" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
@@ -451,7 +480,7 @@
         </div>
       </div>
 
-      <!-- SP 4: TINH HOA HỘI TỤ (MÃ BD4) -->
+      <!-- SP 5: TINH HOA HỘI TỤ (MÃ BD4) -->
       <div id="product-bd4" onclick="openModalBD4()" class="product-card bg-white rounded-2xl overflow-hidden border border-stone-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" data-category="duoi-600k">
         <div class="relative overflow-hidden aspect-[4/5] bg-stone-100">
           <img src="images/bd4-tinh-hoa-hoi-tu.jpg" alt="TINH HOA HỘI TỤ - Mã BD4" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
@@ -475,35 +504,6 @@
             </div>
             <div class="text-xs font-bold text-tet-red">
               Giá sỉ: <span class="text-sm sm:text-base font-extrabold">529.000đ</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- SP 5: TẾT CÁT TƯỜNG (MÃ BD5) -->
-      <div id="product-bd5" onclick="openModalBD5()" class="product-card bg-white rounded-2xl overflow-hidden border border-stone-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" data-category="duoi-600k">
-        <div class="relative overflow-hidden aspect-[4/5] bg-stone-100">
-          <img src="images/bd5-cat-tuong.jpg?v=bd5" alt="TẾT CÁT TƯỜNG - Mã BD5" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
-          <!-- Nhãn Hot & Mã SP trên góc trái -->
-          <div class="absolute top-2.5 left-2.5 flex flex-col gap-1">
-            <span class="bg-red-700 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">Mới</span>
-            <span class="bg-amber-400 text-tet-darkred text-[10px] font-extrabold px-2 py-0.5 rounded shadow">Mã BD5</span>
-          </div>
-          <!-- Badge 5 ảnh -->
-          <span class="absolute bottom-2 right-2 bg-stone-900/80 backdrop-blur-sm text-white text-[10px] font-medium px-2 py-0.5 rounded-full flex items-center gap-1 shadow">
-            <i class="fa-solid fa-images text-amber-300"></i> 5 ảnh
-          </span>
-        </div>
-        <div class="p-3.5 sm:p-4 text-center flex-1 flex flex-col justify-between bg-white">
-          <h3 class="font-serif text-sm sm:text-base font-bold text-stone-900 group-hover:text-tet-red transition leading-snug">
-            TẾT CÁT TƯỜNG
-          </h3>
-          <div class="mt-2.5 pt-2 border-t border-stone-100 space-y-1">
-            <div class="text-xs text-stone-600">
-              Giá lẻ: <strong class="text-stone-900 font-bold text-xs sm:text-sm">359.000đ</strong>
-            </div>
-            <div class="text-xs font-bold text-tet-red">
-              Giá sỉ: <span class="text-sm sm:text-base font-extrabold">329.000đ</span>
             </div>
           </div>
         </div>
