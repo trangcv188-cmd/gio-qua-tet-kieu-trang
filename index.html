@@ -917,10 +917,16 @@
               </button>
             </div>
 
-            <!-- Khung Ảnh Chính Lớn -->
-            <div class="flex-1 relative rounded-2xl overflow-hidden aspect-[4/5] bg-stone-50 border border-stone-200 shadow-sm flex items-center justify-center">
-              <img id="modal-img" src="" alt="Hình ảnh giỏ quà tết" class="w-full h-full object-cover transition-all duration-300">
+            <!-- Khung Ảnh Chính Lớn (Bấm vào để xem ảnh toàn màn hình) -->
+            <div class="flex-1 relative rounded-2xl overflow-hidden aspect-[4/5] bg-stone-50 border border-stone-200 shadow-sm flex items-center justify-center cursor-zoom-in group/mainimg" onclick="openLightbox(currentImgIndex)" title="Bấm để xem ảnh phóng to toàn màn hình">
+              <img id="modal-img" src="" alt="Hình ảnh giỏ quà tết" class="w-full h-full object-cover transition-all duration-300 group-hover/mainimg:scale-105">
               
+              <!-- Nút gợi ý: Bấm xem toàn ảnh -->
+              <div class="absolute top-3 left-3 bg-stone-900/80 hover:bg-tet-red backdrop-blur-sm text-white text-[11px] sm:text-xs font-semibold px-2.5 py-1.5 rounded-full shadow flex items-center gap-1.5 transition">
+                <i class="fa-solid fa-magnifying-glass-plus text-amber-300"></i>
+                <span>Xem toàn ảnh</span>
+              </div>
+
               <!-- Badge chỉ số ảnh (Ví dụ: Ảnh 1/4) -->
               <div id="modal-img-counter" class="absolute bottom-3 right-3 bg-stone-900/75 backdrop-blur-sm text-white text-[11px] font-medium px-2.5 py-1 rounded-full shadow">
                 Ảnh 1/4
@@ -977,7 +983,56 @@
     </div>
   </div>
 
-  <!-- JAVASCRIPT XỬ LÝ TƯƠNG TÁC -->
+  <!-- LIGHTBOX XEM TOÀN ẢNH FULLSCREEN (TỐI ƯU CẢ CHO ĐIỆN THOẠI & MÁY TÍNH) -->
+  <div id="lightbox-modal" class="fixed inset-0 z-[100] bg-black/95 hidden flex flex-col justify-between select-none">
+    <!-- Header của Lightbox: Tiêu đề giỏ quà + Chỉ số ảnh + Nút Đóng -->
+    <div class="flex items-center justify-between px-3 py-3 sm:px-6 sm:py-4 bg-gradient-to-b from-black/80 to-transparent z-10">
+      <div class="flex items-center gap-2 sm:gap-3">
+        <span id="lightbox-counter" class="bg-amber-400 text-stone-900 font-extrabold text-[11px] sm:text-xs px-2.5 py-1 rounded-full shadow">
+          Ảnh 1/4
+        </span>
+        <h3 id="lightbox-title" class="text-white font-serif font-bold text-sm sm:text-lg tracking-wide truncate max-w-[200px] sm:max-w-md">
+          GIỎ QUÀ MAY MẮN
+        </h3>
+      </div>
+      
+      <div class="flex items-center gap-2">
+        <span class="text-white/60 text-xs hidden sm:inline">Phím mũi tên / Vuốt để chuyển ảnh</span>
+        <!-- Nút Đóng X to, dễ bấm -->
+        <button onclick="closeLightbox()" class="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/15 hover:bg-white/30 text-white flex items-center justify-center transition text-lg active:scale-95" title="Đóng toàn ảnh">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Vùng hiển thị ảnh phóng to toàn màn hình -->
+    <div class="flex-1 relative flex items-center justify-center p-2 sm:p-6 overflow-hidden" onclick="if(event.target === this) closeLightbox()">
+      <!-- Nút Trước (Desktop & Mobile) -->
+      <button onclick="prevLightboxImg(event)" class="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-black/50 hover:bg-black/80 text-white flex items-center justify-center text-lg sm:text-2xl transition border border-white/20 active:scale-90 shadow-xl" title="Ảnh trước">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+
+      <!-- Hình ảnh hiển thị toàn màn hình (object-contain giữ trọn vẹn 100% hình không bị cắt) -->
+      <div class="relative max-h-full max-w-full flex items-center justify-center">
+        <img id="lightbox-img" src="" alt="Toàn cảnh giỏ quà Tết" class="max-h-[75vh] sm:max-h-[82vh] max-w-[96vw] sm:max-w-[88vw] object-contain rounded-xl shadow-2xl transition-all duration-300">
+      </div>
+
+      <!-- Nút Sau (Desktop & Mobile) -->
+      <button onclick="nextLightboxImg(event)" class="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-black/50 hover:bg-black/80 text-white flex items-center justify-center text-lg sm:text-2xl transition border border-white/20 active:scale-90 shadow-xl" title="Ảnh kế tiếp">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+
+    <!-- Dải thumbnail nhỏ ở đáy màn hình để bấm chuyển ảnh nhanh -->
+    <div class="px-4 py-2.5 bg-gradient-to-t from-black/80 to-transparent z-10 flex flex-col items-center gap-1.5">
+      <div id="lightbox-thumbs" class="flex items-center justify-center gap-2 overflow-x-auto max-w-full py-1 no-scrollbar">
+        <!-- Render các thumbnail ảnh ở đây -->
+      </div>
+      <div class="text-[11px] text-amber-200/90 font-medium">
+        💡 Vuốt tay trái / phải trên điện thoại hoặc bấm mũi tên để xem tất cả góc chụp
+      </div>
+    </div>
+  </div>
   <script>
     // === XỬ LÝ HERO BANNER SLIDER (ẢNH BÌA) TỰ ĐỘNG CHUYỂN MỖI 3 GIÂY ===
     let currentHeroSlide = 0;
@@ -1184,6 +1239,120 @@
       renderModalThumbnails();
     }
 
+    // === XỬ LÝ LIGHTBOX XEM TOÀN ẢNH FULLSCREEN (ĐIỆN THOẠI & MÁY TÍNH) ===
+    let lightboxImgIndex = 0;
+
+    function openLightbox(index) {
+      if (!currentModalImages || currentModalImages.length === 0) return;
+      lightboxImgIndex = (typeof index === 'number') ? index : currentImgIndex;
+      updateLightboxContent();
+      const lb = document.getElementById('lightbox-modal');
+      lb.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      const lb = document.getElementById('lightbox-modal');
+      lb.classList.add('hidden');
+      const prodModal = document.getElementById('product-modal');
+      if (!prodModal || prodModal.classList.contains('hidden')) {
+        document.body.style.overflow = '';
+      }
+    }
+
+    function updateLightboxContent() {
+      if (!currentModalImages || currentModalImages.length === 0) return;
+      if (lightboxImgIndex >= currentModalImages.length) lightboxImgIndex = 0;
+      if (lightboxImgIndex < 0) lightboxImgIndex = currentModalImages.length - 1;
+
+      const imgEl = document.getElementById('lightbox-img');
+      const counterEl = document.getElementById('lightbox-counter');
+      const titleEl = document.getElementById('lightbox-title');
+      const thumbsContainer = document.getElementById('lightbox-thumbs');
+
+      imgEl.src = currentModalImages[lightboxImgIndex];
+      counterEl.innerText = `Ảnh ${lightboxImgIndex + 1}/${currentModalImages.length}`;
+      
+      const modalTitle = document.getElementById('modal-title');
+      if (modalTitle) {
+        titleEl.innerText = modalTitle.innerText;
+      }
+
+      // Render thumbnail nhỏ ở đáy lightbox
+      thumbsContainer.innerHTML = '';
+      currentModalImages.forEach((imgSrc, i) => {
+        const thumb = document.createElement('div');
+        const isActive = i === lightboxImgIndex;
+        thumb.className = `w-11 h-13 sm:w-14 sm:h-16 rounded-lg overflow-hidden border-2 cursor-pointer transition-all flex-shrink-0 ${isActive ? 'border-amber-400 ring-2 ring-amber-300 scale-105 opacity-100' : 'border-white/30 opacity-60 hover:opacity-100'}`;
+        thumb.innerHTML = `<img src="${imgSrc}" class="w-full h-full object-cover">`;
+        thumb.onclick = (e) => {
+          e.stopPropagation();
+          lightboxImgIndex = i;
+          updateLightboxContent();
+        };
+        thumbsContainer.appendChild(thumb);
+      });
+
+      // Đồng bộ ảnh đang chọn ra modal bên ngoài
+      currentImgIndex = lightboxImgIndex;
+      renderModalThumbnails();
+    }
+
+    function prevLightboxImg(event) {
+      if (event) event.stopPropagation();
+      if (!currentModalImages || currentModalImages.length <= 1) return;
+      lightboxImgIndex = (lightboxImgIndex - 1 + currentModalImages.length) % currentModalImages.length;
+      updateLightboxContent();
+    }
+
+    function nextLightboxImg(event) {
+      if (event) event.stopPropagation();
+      if (!currentModalImages || currentModalImages.length <= 1) return;
+      lightboxImgIndex = (lightboxImgIndex + 1) % currentModalImages.length;
+      updateLightboxContent();
+    }
+
+    // Cử chỉ vuốt tay (Touch Swipe) trên màn hình điện thoại
+    (function initLightboxSwipe() {
+      let touchStartX = 0;
+      let touchEndX = 0;
+      let touchStartY = 0;
+      let touchEndY = 0;
+
+      const lb = document.getElementById('lightbox-modal');
+      if (!lb) return;
+
+      lb.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
+      }, { passive: true });
+
+      lb.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        touchEndY = e.changedTouches[0].screenY;
+        const diffX = touchEndX - touchStartX;
+        const diffY = touchEndY - touchStartY;
+
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
+          if (diffX < 0) {
+            nextLightboxImg();
+          } else {
+            prevLightboxImg();
+          }
+        }
+      }, { passive: true });
+    })();
+
+    // Lắng nghe phím bàn phím trên máy tính
+    document.addEventListener('keydown', e => {
+      const lb = document.getElementById('lightbox-modal');
+      if (lb && !lb.classList.contains('hidden')) {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') nextLightboxImg();
+        if (e.key === 'ArrowLeft') prevLightboxImg();
+      }
+    });
+
     // Xử lý bộ lọc sản phẩm với hiệu ứng xuất hiện lượn sóng
     function filterProducts(category) {
       const cards = document.querySelectorAll('.product-card');
@@ -1259,6 +1428,7 @@
 
       renderModalThumbnails();
       document.getElementById('product-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
     }
 
     // Hàm mở chi tiết Giỏ Quà Linh Dương Thưởng Cát (Mã: BD2)
@@ -1303,6 +1473,7 @@
 
       renderModalThumbnails();
       document.getElementById('product-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
     }
 
     // Hàm mở chi tiết Giỏ Quà Đại Cát Đại Lợi (Mã: BD3)
@@ -1340,6 +1511,7 @@
 
       renderModalThumbnails();
       document.getElementById('product-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
     }
 
     // Hàm mở chi tiết Giỏ Quà Tinh Hoa Hội Tụ (Mã: BD4)
@@ -1395,6 +1567,7 @@
 
       renderModalThumbnails();
       document.getElementById('product-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
     }
 
     // ==================== DANH SÁCH MODAL GIỎ QUÀ SANG TRỌNG (ST1 - ST7) ====================
@@ -1443,6 +1616,7 @@
 
       renderModalThumbnails();
       document.getElementById('product-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
     }
 
     // Hàm mở chi tiết Giỏ Quà Bách Niên Thịnh Vượng (Mã: ST2)
@@ -1495,6 +1669,7 @@
 
       renderModalThumbnails();
       document.getElementById('product-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
     }
 
     // Hàm mở chi tiết Giỏ Quà Hoàng Kim Phú Quý (Mã: ST3)
@@ -1544,6 +1719,7 @@
 
       renderModalThumbnails();
       document.getElementById('product-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
     }
 
     // Hàm mở chi tiết Giỏ Quà An Khang Thịnh Vượng (Mã: ST4)
@@ -1593,6 +1769,7 @@
 
       renderModalThumbnails();
       document.getElementById('product-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
     }
 
     // Hàm mở chi tiết Giỏ Quà Gói Trọn Vị Xuân (Mã: ST5)
@@ -1644,6 +1821,7 @@
 
       renderModalThumbnails();
       document.getElementById('product-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
     }
 
     // Hàm mở chi tiết Giỏ Quà Sắc Xuân Rạng Rỡ (Mã: ST6)
@@ -1696,6 +1874,7 @@
 
       renderModalThumbnails();
       document.getElementById('product-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
     }
 
     // Hàm mở chi tiết Giỏ Quà Phúc Lộc Thọ (Mã: ST7)
@@ -1747,6 +1926,7 @@
 
       renderModalThumbnails();
       document.getElementById('product-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
     }
 
     // Hàm mở chi tiết Giỏ Quà Bách Niên Phú Quý (Mã: CC1)
@@ -1796,6 +1976,7 @@
 
       renderModalThumbnails();
       document.getElementById('product-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
     }
 
     // Hàm mở chi tiết Giỏ Quà Thịnh Vượng Cát Tường (Mã: CC2)
@@ -1847,6 +2028,7 @@
 
       renderModalThumbnails();
       document.getElementById('product-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
     }
 
     // Hàm mở chi tiết Giỏ Quà Vạn Sự Như Ý (Mã: CC3)
@@ -1901,6 +2083,7 @@
 
       renderModalThumbnails();
       document.getElementById('product-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
     }
 
     // Hàm modal chung cho các sản phẩm khác trên trang
@@ -1929,6 +2112,7 @@
 
       renderModalThumbnails();
       document.getElementById('product-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
     }
 
     // Cuộn tới giỏ quà cụ thể từ menu dropdown và tạo hiệu ứng nhấp nháy nổi bật
@@ -1950,6 +2134,8 @@
 
     function closeModal() {
       document.getElementById('product-modal').classList.add('hidden');
+      closeLightbox();
+      document.body.style.overflow = '';
     }
   </script>
 </body>
