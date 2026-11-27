@@ -299,7 +299,7 @@
     </div>
   </nav>
 
-  <!-- HERO BANNER CAROUSEL (ẢNH BÌA SLIDER CHUYÊN NGHIỆP - TỰ ĐỔI MỖI 5 GIÂY) -->
+  <!-- HERO BANNER CAROUSEL (ẢNH BÌA SLIDER CHUYÊN NGHIỆP - TỰ ĐỔI MỖI 3 GIÂY) -->
   <header class="relative bg-gradient-to-b from-[#5C0610] via-[#8E0D1A] to-[#FBF9F5] pt-2 sm:pt-6 pb-2 sm:pb-6">
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
       
@@ -1070,7 +1070,7 @@
     </div>
   </div>
   <script>
-    // === XỬ LÝ HERO BANNER SLIDER (ẢNH BÌA) TỰ ĐỘNG CHUYỂN MỖI 5 GIÂY ===
+    // === XỬ LÝ HERO BANNER SLIDER (ẢNH BÌA) TỰ ĐỘNG CHUYỂN MỖI 3 GIÂY ===
     let currentHeroSlide = 0;
     let heroTimer = null;
 
@@ -1123,14 +1123,14 @@
       if (heroTimer) clearInterval(heroTimer);
       heroTimer = setInterval(() => {
         showHeroSlide(currentHeroSlide + 1);
-      }, 5000); // Tự động chuyển hình đúng sau 5 giây
+      }, 3000); // Tự động chuyển hình đúng sau 3 giây
     }
 
     function resetHeroTimer() {
       startHeroTimer();
     }
 
-    // Khởi động đồng hồ đếm 5s ngay lập tức
+    // Khởi động đồng hồ đếm 3s ngay lập tức
     startHeroTimer();
 
     window.addEventListener('load', () => {
