@@ -97,40 +97,25 @@
     }
 
     /* MÀU CHỮ OMBRE CAO CẤP */
-    .text-ombre-title {
-      background: linear-gradient(135deg, #7A0A16 0%, #B81424 25%, #E63946 50%, #D4AF37 80%, #996515 100%);
+    .text-ombre-desc {
+      background: linear-gradient(135deg, #7A0A16 0%, #B81424 25%, #E63946 50%, #D4AF37 75%, #996515 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       filter: drop-shadow(0 1px 1px rgba(212, 175, 55, 0.2));
     }
 
-    .text-ombre-desc {
-      background: linear-gradient(135deg, #4A040D 0%, #7A0A16 35%, #B8860B 75%, #5C0610 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    /* HIỆU ỨNG CHỮ ĐI VÀO TỪ 2 BÊN */
-    .intro-slide-left {
+    /* HIỆU ỨNG CHỮ XUẤT HIỆN */
+    .intro-slide-reveal {
       opacity: 0;
-      transform: translateX(-70px);
+      transform: translateY(20px);
       transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
       will-change: opacity, transform;
     }
 
-    .intro-slide-right {
-      opacity: 0;
-      transform: translateX(70px);
-      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.15s, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
-      will-change: opacity, transform;
-    }
-
-    .intro-slide-left.revealed,
-    .intro-slide-right.revealed {
+    .intro-slide-reveal.revealed {
       opacity: 1;
-      transform: translateX(0);
+      transform: translateY(0);
     }
 
     /* FONT CHỮ MỀM MẠI, NGHỆ THUẬT CHO LỜI CHÚC TẾT */
@@ -348,27 +333,11 @@
 
   <!-- BỘ LỌC VÀ DANH MỤC SẢN PHẨM -->
   <section id="san-pham" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- KHỐI GIỚI THIỆU Ý NGHĨA GIỎ QUÀ TẾT (FONT MỀM MẠI, CHỮ OMBRE, HIỆU ỨNG TỪ 2 BÊN) -->
-    <div id="intro-reveal-box" class="text-center max-w-4xl mx-auto mb-12 overflow-hidden px-3 sm:px-6 pt-2">
-      
-      <!-- Đoạn 1: Đi vào từ BÊN TRÁI (Font Cormorant Garamond mềm mại, thanh thoát, Ombre Đỏ Ruby - Vàng Kim) -->
-      <div class="intro-slide-left mb-4 sm:mb-6">
-        <h2 class="font-cormorant italic text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-semibold leading-relaxed tracking-wide text-ombre-title">
-          “Một giỏ quà Tết trọn vẹn không chỉ đẹp ở diện mạo sang trọng bên ngoài, mà còn đắt giá ở sự tâm huyết và thiết thực bên trong.”
-        </h2>
-      </div>
-
-      <!-- Dải phân cách hoa văn mềm mại -->
-      <div class="flex items-center justify-center gap-3 my-3 sm:my-5">
-        <div class="h-[1px] w-16 sm:w-32 bg-gradient-to-r from-transparent via-amber-400 to-transparent"></div>
-        <i class="fa-solid fa-sparkles text-amber-500 text-xs sm:text-sm"></i>
-        <div class="h-[1px] w-16 sm:w-32 bg-gradient-to-l from-transparent via-amber-400 to-transparent"></div>
-      </div>
-
-      <!-- Đoạn 2: Đi vào từ BÊN PHẢI (Font Cormorant Garamond mềm mại, Ombre Vàng Đồng - Đỏ Đô) -->
-      <div class="intro-slide-right">
-        <p class="font-cormorant italic text-lg sm:text-xl md:text-2xl font-medium leading-relaxed max-w-3xl mx-auto text-ombre-desc tracking-wide">
-          Với thiết kế tinh tế, giỏ quà vừa là điểm nhấn trang trí rực rỡ cho không gian ngày xuân thêm ấm cúng, vừa là món quà biếu đầy ý nghĩa thay bạn gửi trao lời chúc sung túc, bình an tới những người thân yêu.
+    <!-- KHỐI GIỚI THIỆU Ý NGHĨA GIỎ QUÀ TẾT (FONT MỀM MẠI, CHỮ OMBRE ĐỎ VÀNG SANG TRỌNG) -->
+    <div id="intro-reveal-box" class="text-center max-w-4xl mx-auto mb-10 overflow-hidden px-3 sm:px-6 pt-2">
+      <div class="intro-slide-reveal">
+        <p class="font-cormorant italic text-xl sm:text-2xl md:text-[28px] font-medium leading-relaxed max-w-3xl mx-auto text-ombre-desc tracking-wide">
+          “Với thiết kế tinh tế, giỏ quà vừa là điểm nhấn trang trí rực rỡ cho không gian ngày xuân thêm ấm cúng, vừa là món quà biếu đầy ý nghĩa thay bạn gửi trao lời chúc sung túc, bình an tới những người thân yêu.”
         </p>
       </div>
 
@@ -1096,27 +1065,22 @@
 
     // Khởi tạo hiệu ứng Scroll Reveal khi kéo tới đâu giỏ quà xuất hiện tới đó
     function initScrollReveal() {
-      // Hiệu ứng chữ đi vào từ 2 bên cho khối giới thiệu ý nghĩa giỏ quà
+      // Hiệu ứng chữ cho khối giới thiệu ý nghĩa giỏ quà
       const introBox = document.getElementById('intro-reveal-box');
       if (introBox) {
+        const revealEl = introBox.querySelector('.intro-slide-reveal');
         if ('IntersectionObserver' in window) {
           const introObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
               if (entry.isIntersecting) {
-                const left = introBox.querySelector('.intro-slide-left');
-                const right = introBox.querySelector('.intro-slide-right');
-                if (left) left.classList.add('revealed');
-                if (right) right.classList.add('revealed');
+                if (revealEl) revealEl.classList.add('revealed');
                 introObserver.unobserve(entry.target);
               }
             });
           }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
           introObserver.observe(introBox);
         } else {
-          const left = introBox.querySelector('.intro-slide-left');
-          const right = introBox.querySelector('.intro-slide-right');
-          if (left) left.classList.add('revealed');
-          if (right) right.classList.add('revealed');
+          if (revealEl) revealEl.classList.add('revealed');
         }
       }
 
