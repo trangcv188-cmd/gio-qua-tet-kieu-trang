@@ -139,12 +139,12 @@
         </div>
       </a>
 
-      <!-- Menu links: Giỏ Quà Bình Dân (Có Menu xổ xuống), Giỏ Quà Sang Trọng, Giỏ Quà Đẳng Cấp -->
-      <div class="flex items-center gap-4 sm:gap-8 font-semibold text-sm sm:text-base text-stone-700">
+      <!-- Menu links: Giỏ Quà Bình Dân (Có Menu xổ xuống), Giỏ Quà Sang Trọng, Giỏ Quà Cao Cấp (Trên Mobile ẩn chữ Giỏ Quà) -->
+      <div class="flex items-center gap-3 sm:gap-8 font-semibold text-xs sm:text-base text-stone-700">
         <!-- Mục Giỏ Quà Bình Dân có Dropdown xổ xuống khi rê chuột -->
         <div class="relative group py-4">
-          <a href="#san-pham" onclick="filterProducts('duoi-600k')" class="flex items-center gap-1.5 hover:text-tet-red transition group-hover:text-tet-red">
-            <span>Giỏ Quà Bình Dân</span>
+          <a href="#san-pham" onclick="filterProducts('duoi-600k')" class="flex items-center gap-1 sm:gap-1.5 hover:text-tet-red transition group-hover:text-tet-red">
+            <span><span class="hidden sm:inline">Giỏ Quà </span>Bình Dân</span>
             <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180 text-stone-400 group-hover:text-tet-red"></i>
           </a>
           
@@ -188,8 +188,8 @@
 
         <!-- Mục Giỏ Quà Sang Trọng có Dropdown xổ xuống khi rê chuột -->
         <div class="relative group py-4">
-          <a href="#san-pham" onclick="filterProducts('600k-1200k')" class="flex items-center gap-1.5 hover:text-tet-red transition group-hover:text-tet-red">
-            <span>Giỏ Quà Sang Trọng</span>
+          <a href="#san-pham" onclick="filterProducts('600k-1200k')" class="flex items-center gap-1 sm:gap-1.5 hover:text-tet-red transition group-hover:text-tet-red">
+            <span><span class="hidden sm:inline">Giỏ Quà </span>Sang Trọng</span>
             <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180 text-stone-400 group-hover:text-tet-red"></i>
           </a>
           
@@ -253,8 +253,8 @@
         </div>
         <!-- Mục Giỏ Quà Cao Cấp có Dropdown xổ xuống khi rê chuột -->
         <div class="relative group py-4">
-          <a href="#san-pham" onclick="filterProducts('cao-cap')" class="flex items-center gap-1.5 hover:text-tet-red transition group-hover:text-tet-red">
-            <span>Giỏ Quà Cao Cấp</span>
+          <a href="#san-pham" onclick="filterProducts('cao-cap')" class="flex items-center gap-1 sm:gap-1.5 hover:text-tet-red transition group-hover:text-tet-red">
+            <span><span class="hidden sm:inline">Giỏ Quà </span>Cao Cấp</span>
             <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180 text-stone-400 group-hover:text-tet-red"></i>
           </a>
           
@@ -343,17 +343,17 @@
 
       <!-- BỘ LỌC PHÂN KHÚC GIÁ -->
       <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mt-8">
-        <button onclick="filterProducts('all')" class="filter-btn active px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition bg-tet-red text-white shadow-sm" data-category="all">
+        <button onclick="filterProducts('all')" class="filter-btn active px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition bg-tet-red text-white shadow-sm" data-category="all">
           Tất Cả Mẫu
         </button>
-        <button onclick="filterProducts('duoi-600k')" class="filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition bg-white text-stone-700 hover:bg-stone-100 border border-stone-200" data-category="duoi-600k">
-          Giỏ Quà Bình Dân
+        <button onclick="filterProducts('duoi-600k')" class="filter-btn px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition bg-white text-stone-700 hover:bg-stone-100 border border-stone-200" data-category="duoi-600k">
+          <span class="hidden sm:inline">Giỏ Quà </span>Bình Dân
         </button>
-        <button onclick="filterProducts('600k-1200k')" class="filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition bg-white text-stone-700 hover:bg-stone-100 border border-stone-200" data-category="600k-1200k">
-          Giỏ Quà Sang Trọng
+        <button onclick="filterProducts('600k-1200k')" class="filter-btn px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition bg-white text-stone-700 hover:bg-stone-100 border border-stone-200" data-category="600k-1200k">
+          <span class="hidden sm:inline">Giỏ Quà </span>Sang Trọng
         </button>
-        <button onclick="filterProducts('cao-cap')" class="filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition bg-white text-stone-700 hover:bg-stone-100 border border-stone-200" data-category="cao-cap">
-          Giỏ Quà Cao Cấp
+        <button onclick="filterProducts('cao-cap')" class="filter-btn px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition bg-white text-stone-700 hover:bg-stone-100 border border-stone-200" data-category="cao-cap">
+          <span class="hidden sm:inline">Giỏ Quà </span>Cao Cấp
         </button>
       </div>
     </div>
