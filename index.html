@@ -1,0 +1,1992 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sỉ Lẻ Giỏ Quà Tết Kiều Trang - Giỏ Quà Tết Đinh Mùi 2027</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Cormorant Garamond (Mềm mại, thơ mộng) + Lora (Sang trọng) + Be Vietnam Pro (Hiện đại) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            tet: {
+              red: '#8E0D1A',       // Đỏ thẫm hoàng gia
+              darkred: '#5C0610',   // Đỏ đô
+              gold: '#D4AF37',      // Vàng ánh kim cao cấp
+              lightgold: '#FDF6E2', // Vàng nhạt nền
+              accent: '#E63946',    // Đỏ tươi nhấn CTA
+            }
+          },
+          fontFamily: {
+            serif: ['"Lora"', 'Georgia', 'serif'],
+            sans: ['"Be Vietnam Pro"', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            cormorant: ['"Cormorant Garamond"', '"Lora"', 'Georgia', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+    .gold-gradient {
+      background: linear-gradient(135deg, #FFE082 0%, #D4AF37 50%, #AA7C11 100%);
+    }
+    .gold-text {
+      background: linear-gradient(135deg, #FFE599 0%, #E5B842 50%, #B8860B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .red-gradient {
+      background: linear-gradient(145deg, #8E0D1A 0%, #52050E 100%);
+    }
+    .card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgba(142, 13, 26, 0.15), 0 10px 10px -5px rgba(142, 13, 26, 0.08);
+    }
+
+    /* HIỆU ỨNG XUẤT HIỆN KHI CUỘN TỚI (SCROLL REVEAL) CHO GIỎ QUÀ */
+    .product-card {
+      opacity: 0;
+      transform: translateY(40px) scale(0.95);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+                  box-shadow 0.35s ease,
+                  border-color 0.35s ease;
+      will-change: opacity, transform;
+    }
+
+    .product-card.revealed {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .product-card.revealed:hover {
+      transform: translateY(-8px) scale(1.015);
+      box-shadow: 0 20px 30px -10px rgba(142, 13, 26, 0.18), 0 10px 15px -5px rgba(212, 175, 55, 0.15);
+      border-color: rgba(212, 175, 55, 0.75);
+    }
+
+    /* Hiệu ứng mượt mà cho các khối thông tin */
+    .reveal-card {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 0.3s ease;
+    }
+    .reveal-card.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* MÀU CHỮ OMBRE CAO CẤP */
+    .text-ombre-title {
+      background: linear-gradient(135deg, #7A0A16 0%, #B81424 25%, #E63946 50%, #D4AF37 80%, #996515 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 1px 1px rgba(212, 175, 55, 0.2));
+    }
+
+    .text-ombre-desc {
+      background: linear-gradient(135deg, #4A040D 0%, #7A0A16 35%, #B8860B 75%, #5C0610 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* HIỆU ỨNG CHỮ ĐI VÀO TỪ 2 BÊN */
+    .intro-slide-left {
+      opacity: 0;
+      transform: translateX(-70px);
+      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .intro-slide-right {
+      opacity: 0;
+      transform: translateX(70px);
+      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.15s, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+      will-change: opacity, transform;
+    }
+
+    .intro-slide-left.revealed,
+    .intro-slide-right.revealed {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* FONT CHỮ MỀM MẠI, NGHỆ THUẬT CHO LỜI CHÚC TẾT */
+    .font-cormorant {
+      font-family: 'Cormorant Garamond', 'Lora', Georgia, serif;
+    }
+  </style>
+</head>
+<body class="font-sans bg-[#FBF9F5] text-stone-800 antialiased selection:bg-tet-red selection:text-white">
+
+  <!-- NAVIGATION -->
+  <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-12 h-12 rounded-full red-gradient flex items-center justify-center text-amber-300 font-serif text-lg font-bold shadow-md">
+          2027
+        </div>
+        <div>
+          <span class="font-serif text-xl sm:text-2xl font-bold text-tet-red block leading-none tracking-tight">Giỏ Quà Tết Đinh Mùi</span>
+        </div>
+      </a>
+
+      <!-- Menu links: Giỏ Quà Bình Dân (Có Menu xổ xuống), Giỏ Quà Sang Trọng, Giỏ Quà Đẳng Cấp -->
+      <div class="flex items-center gap-4 sm:gap-8 font-semibold text-sm sm:text-base text-stone-700">
+        <!-- Mục Giỏ Quà Bình Dân có Dropdown xổ xuống khi rê chuột -->
+        <div class="relative group py-4">
+          <a href="#san-pham" onclick="filterProducts('duoi-600k')" class="flex items-center gap-1.5 hover:text-tet-red transition group-hover:text-tet-red">
+            <span>Giỏ Quà Bình Dân</span>
+            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180 text-stone-400 group-hover:text-tet-red"></i>
+          </a>
+          
+          <!-- Hộp Dropdown xổ ra khi rê chuột -->
+          <div class="absolute left-0 top-full pt-1 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 shadow-2xl">
+            <div class="bg-white rounded-2xl border border-stone-200/90 py-2 shadow-xl ring-1 ring-black/5 overflow-hidden">
+              <div class="px-4 py-2 text-[10px] font-bold text-stone-400 uppercase tracking-wider border-b border-stone-100 bg-stone-50/50">
+                4 Mẫu Giỏ Quà Bình Dân (Dưới 600K)
+              </div>
+              <a href="#product-bd1" onclick="goToProduct('bd1')" class="flex items-center gap-3 px-4 py-3 hover:bg-red-50 hover:text-tet-red transition border-b border-stone-100/70 group/item">
+                <img src="images/bd1-may-man.jpg" class="w-10 h-10 rounded-lg object-cover border border-stone-200 flex-shrink-0 group-hover/item:border-tet-red">
+                <div>
+                  <div class="font-bold text-xs text-stone-900 group-hover/item:text-tet-red">GIỎ QUÀ MAY MẮN (BD1)</div>
+                  <div class="text-[11px] text-tet-red font-semibold mt-0.5">349.000đ <span class="text-stone-400 font-normal">| Sỉ 329K</span></div>
+                </div>
+              </a>
+              <a href="#product-bd2" onclick="goToProduct('bd2')" class="flex items-center gap-3 px-4 py-3 hover:bg-red-50 hover:text-tet-red transition border-b border-stone-100/70 group/item">
+                <img src="images/bd2-linh-duong-thuong-cat.jpg" class="w-10 h-10 rounded-lg object-cover border border-stone-200 flex-shrink-0 group-hover/item:border-tet-red">
+                <div>
+                  <div class="font-bold text-xs text-stone-900 group-hover/item:text-tet-red">LINH DƯƠNG THƯỞNG CÁT (BD2)</div>
+                  <div class="text-[11px] text-tet-red font-semibold mt-0.5">399.000đ <span class="text-stone-400 font-normal">| Sỉ 379K</span></div>
+                </div>
+              </a>
+              <a href="#product-bd3" onclick="goToProduct('bd3')" class="flex items-center gap-3 px-4 py-3 hover:bg-red-50 hover:text-tet-red transition border-b border-stone-100/70 group/item">
+                <img src="images/bd3-dai-cat-dai-loi.jpg" class="w-10 h-10 rounded-lg object-cover border border-stone-200 flex-shrink-0 group-hover/item:border-tet-red">
+                <div>
+                  <div class="font-bold text-xs text-stone-900 group-hover/item:text-tet-red">ĐẠI CÁT ĐẠI LỢI (BD3)</div>
+                  <div class="text-[11px] text-tet-red font-semibold mt-0.5">409.000đ <span class="text-stone-400 font-normal">| Sỉ 389K</span></div>
+                </div>
+              </a>
+              <a href="#product-bd4" onclick="goToProduct('bd4')" class="flex items-center gap-3 px-4 py-3 hover:bg-red-50 hover:text-tet-red transition group/item">
+                <img src="images/bd4-tinh-hoa-hoi-tu.jpg" class="w-10 h-10 rounded-lg object-cover border border-stone-200 flex-shrink-0 group-hover/item:border-tet-red">
+                <div>
+                  <div class="font-bold text-xs text-stone-900 group-hover/item:text-tet-red">TINH HOA HỘI TỤ (BD4)</div>
+                  <div class="text-[11px] text-tet-red font-semibold mt-0.5">559.000đ <span class="text-stone-400 font-normal">| Sỉ 529K</span></div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mục Giỏ Quà Sang Trọng có Dropdown xổ xuống khi rê chuột -->
+        <div class="relative group py-4">
+          <a href="#san-pham" onclick="filterProducts('600k-1200k')" class="flex items-center gap-1.5 hover:text-tet-red transition group-hover:text-tet-red">
+            <span>Giỏ Quà Sang Trọng</span>
+            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180 text-stone-400 group-hover:text-tet-red"></i>
+          </a>
+          
+          <!-- Hộp Dropdown xổ ra khi rê chuột -->
+          <div class="absolute left-0 top-full pt-1 w-80 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 shadow-2xl">
+            <div class="bg-white rounded-2xl border border-stone-200/90 py-2 shadow-xl ring-1 ring-black/5 overflow-hidden max-h-96 overflow-y-auto">
+              <div class="px-4 py-2 text-[10px] font-bold text-stone-400 uppercase tracking-wider border-b border-stone-100 bg-stone-50/50">
+                7 Mẫu Giỏ Quà Sang Trọng (600K - 1TR)
+              </div>
+              <a href="#product-st1" onclick="goToProduct('st1')" class="flex items-center gap-3 px-4 py-2.5 hover:bg-red-50 hover:text-tet-red transition border-b border-stone-100/70 group/item">
+                <img src="images/st1-ma-dao-thanh-cong.jpg" class="w-10 h-10 rounded-lg object-cover border border-stone-200 flex-shrink-0 group-hover/item:border-tet-red">
+                <div>
+                  <div class="font-bold text-xs text-stone-900 group-hover/item:text-tet-red">MÃ ĐÁO THÀNH CÔNG (ST1)</div>
+                  <div class="text-[11px] text-tet-red font-semibold mt-0.5">669.000đ <span class="text-stone-400 font-normal">| Sỉ 649K</span></div>
+                </div>
+              </a>
+              <a href="#product-st2" onclick="goToProduct('st2')" class="flex items-center gap-3 px-4 py-2.5 hover:bg-red-50 hover:text-tet-red transition border-b border-stone-100/70 group/item">
+                <img src="images/st2-bach-nien-thinh-vuong.jpg" class="w-10 h-10 rounded-lg object-cover border border-stone-200 flex-shrink-0 group-hover/item:border-tet-red">
+                <div>
+                  <div class="font-bold text-xs text-stone-900 group-hover/item:text-tet-red">BÁCH NIÊN THỊNH VƯỢNG (ST2)</div>
+                  <div class="text-[11px] text-tet-red font-semibold mt-0.5">689.000đ <span class="text-stone-400 font-normal">| Sỉ 669K</span></div>
+                </div>
+              </a>
+              <a href="#product-st3" onclick="goToProduct('st3')" class="flex items-center gap-3 px-4 py-2.5 hover:bg-red-50 hover:text-tet-red transition border-b border-stone-100/70 group/item">
+                <img src="images/st3-hoang-kim-phu-quy.jpg" class="w-10 h-10 rounded-lg object-cover border border-stone-200 flex-shrink-0 group-hover/item:border-tet-red">
+                <div>
+                  <div class="font-bold text-xs text-stone-900 group-hover/item:text-tet-red">HOÀNG KIM PHÚ QUÝ (ST3)</div>
+                  <div class="text-[11px] text-tet-red font-semibold mt-0.5">699.000đ <span class="text-stone-400 font-normal">| Sỉ 679K</span></div>
+                </div>
+              </a>
+              <a href="#product-st4" onclick="goToProduct('st4')" class="flex items-center gap-3 px-4 py-2.5 hover:bg-red-50 hover:text-tet-red transition border-b border-stone-100/70 group/item">
+                <img src="images/st4-an-khang-thinh-vuong.jpg" class="w-10 h-10 rounded-lg object-cover border border-stone-200 flex-shrink-0 group-hover/item:border-tet-red">
+                <div>
+                  <div class="font-bold text-xs text-stone-900 group-hover/item:text-tet-red">AN KHANG THỊNH VƯỢNG (ST4)</div>
+                  <div class="text-[11px] text-tet-red font-semibold mt-0.5">699.000đ <span class="text-stone-400 font-normal">| Sỉ 679K</span></div>
+                </div>
+              </a>
+              <a href="#product-st5" onclick="goToProduct('st5')" class="flex items-center gap-3 px-4 py-2.5 hover:bg-red-50 hover:text-tet-red transition border-b border-stone-100/70 group/item">
+                <img src="images/st5-goi-tron-vi-xuan.jpg" class="w-10 h-10 rounded-lg object-cover border border-stone-200 flex-shrink-0 group-hover/item:border-tet-red">
+                <div>
+                  <div class="font-bold text-xs text-stone-900 group-hover/item:text-tet-red">GÓI TRỌN VỊ XUÂN (ST5)</div>
+                  <div class="text-[11px] text-tet-red font-semibold mt-0.5">699.000đ <span class="text-stone-400 font-normal">| Sỉ 679K</span></div>
+                </div>
+              </a>
+              <a href="#product-st6" onclick="goToProduct('st6')" class="flex items-center gap-3 px-4 py-2.5 hover:bg-red-50 hover:text-tet-red transition border-b border-stone-100/70 group/item">
+                <img src="images/st6-sac-xuan-rang-ro.jpg" class="w-10 h-10 rounded-lg object-cover border border-stone-200 flex-shrink-0 group-hover/item:border-tet-red">
+                <div>
+                  <div class="font-bold text-xs text-stone-900 group-hover/item:text-tet-red">SẮC XUÂN RẠNG RỠ (ST6)</div>
+                  <div class="text-[11px] text-tet-red font-semibold mt-0.5">719.000đ <span class="text-stone-400 font-normal">| Sỉ 699K</span></div>
+                </div>
+              </a>
+              <a href="#product-st7" onclick="goToProduct('st7')" class="flex items-center gap-3 px-4 py-2.5 hover:bg-red-50 hover:text-tet-red transition group/item">
+                <img src="images/st7-phuc-loc-tho.jpg" class="w-10 h-10 rounded-lg object-cover border border-stone-200 flex-shrink-0 group-hover/item:border-tet-red">
+                <div>
+                  <div class="font-bold text-xs text-stone-900 group-hover/item:text-tet-red">PHÚC LỘC THỌ (ST7)</div>
+                  <div class="text-[11px] text-tet-red font-semibold mt-0.5">729.000đ <span class="text-stone-400 font-normal">| Sỉ 699K</span></div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Mục Giỏ Quà Cao Cấp có Dropdown xổ xuống khi rê chuột -->
+        <div class="relative group py-4">
+          <a href="#san-pham" onclick="filterProducts('cao-cap')" class="flex items-center gap-1.5 hover:text-tet-red transition group-hover:text-tet-red">
+            <span>Giỏ Quà Cao Cấp</span>
+            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180 text-stone-400 group-hover:text-tet-red"></i>
+          </a>
+          
+          <!-- Hộp Dropdown xổ ra khi rê chuột -->
+          <div class="absolute right-0 sm:left-0 top-full pt-1 w-80 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 shadow-2xl">
+            <div class="bg-white rounded-2xl border border-stone-200/90 py-2 shadow-xl ring-1 ring-black/5 overflow-hidden">
+              <div class="px-4 py-2 text-[10px] font-bold text-stone-400 uppercase tracking-wider border-b border-stone-100 bg-stone-50/50">
+                3 Mẫu Giỏ Quà Cao Cấp (Hộp Vali & Thuyền VIP)
+              </div>
+              <a href="#product-cc3" onclick="goToProduct('cc3')" class="flex items-center gap-3 px-4 py-2.5 hover:bg-red-50 hover:text-tet-red transition border-b border-stone-100/70 group/item">
+                <img src="images/cc3-van-su-nhu-y.jpg" class="w-10 h-10 rounded-lg object-cover border border-stone-200 flex-shrink-0 group-hover/item:border-tet-red">
+                <div>
+                  <div class="font-bold text-xs text-stone-900 group-hover/item:text-tet-red">VẠN SỰ NHƯ Ý (CC3)</div>
+                  <div class="text-[11px] text-tet-red font-semibold mt-0.5">849.000đ <span class="text-stone-400 font-normal">| Sỉ 809K</span></div>
+                </div>
+              </a>
+              <a href="#product-cc1" onclick="goToProduct('cc1')" class="flex items-center gap-3 px-4 py-2.5 hover:bg-red-50 hover:text-tet-red transition border-b border-stone-100/70 group/item">
+                <img src="images/cc1-bach-nien-phu-quy.jpg" class="w-10 h-10 rounded-lg object-cover border border-stone-200 flex-shrink-0 group-hover/item:border-tet-red">
+                <div>
+                  <div class="font-bold text-xs text-stone-900 group-hover/item:text-tet-red">BÁCH NIÊN PHÚ QUÝ (CC1)</div>
+                  <div class="text-[11px] text-tet-red font-semibold mt-0.5">969.000đ <span class="text-stone-400 font-normal">| Sỉ 939K</span></div>
+                </div>
+              </a>
+              <a href="#product-cc2" onclick="goToProduct('cc2')" class="flex items-center gap-3 px-4 py-2.5 hover:bg-red-50 hover:text-tet-red transition group/item">
+                <img src="images/cc2-thinh-vuong-cat-tuong.jpg" class="w-10 h-10 rounded-lg object-cover border border-stone-200 flex-shrink-0 group-hover/item:border-tet-red">
+                <div>
+                  <div class="font-bold text-xs text-stone-900 group-hover/item:text-tet-red">THỊNH VƯỢNG CÁT TƯỜNG (CC2)</div>
+                  <div class="text-[11px] text-tet-red font-semibold mt-0.5">989.000đ <span class="text-stone-400 font-normal">| Sỉ 969K</span></div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO BANNER CAROUSEL (ẢNH BÌA SLIDER CHUYÊN NGHIỆP) -->
+  <header class="relative bg-gradient-to-b from-[#5C0610] via-[#8E0D1A] to-[#FBF9F5] pt-3 sm:pt-6 pb-6 sm:pb-8">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+      
+      <!-- Khung Carousel Banner -->
+      <div id="hero-carousel" class="relative group rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-amber-400/40 bg-[#42040B] select-none">
+        
+        <!-- Wrapper các Slide (Tỉ lệ chuẩn 1916x821 nguyên bản gốc siêu nét 2.5MB) -->
+        <div class="relative w-full aspect-[1916/821]">
+          <!-- Slide 1: Banner Giỏ Quà Tết Kiều Trang (Hình gốc 'bìa a.png') -->
+          <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 z-10" data-slide="0">
+            <img src="images/banner-1.png?v=3" alt="Giỏ Quà Tết Kiều Trang 2027" class="w-full h-full object-cover">
+          </div>
+          
+          <!-- Slide 2: Banner Vì sao nên chọn (Hình gốc 'bìa 2.png') -->
+          <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0 pointer-events-none" data-slide="1">
+            <img src="images/banner-2.png?v=3" alt="Vì sao nên chọn Giỏ Quà Tết Kiều Trang" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+        <!-- Nút điều hướng -->
+        <button onclick="prevHeroSlide()" aria-label="Banner trước" class="absolute left-2 sm:left-5 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-black/40 hover:bg-black/75 text-white flex items-center justify-center backdrop-blur-md border border-white/25 hover:border-amber-400 transition-all duration-200 z-20 shadow-lg">
+          <i class="fa-solid fa-chevron-left text-xs sm:text-base"></i>
+        </button>
+
+        <button onclick="nextHeroSlide()" aria-label="Banner tiếp theo" class="absolute right-2 sm:right-5 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-black/40 hover:bg-black/75 text-white flex items-center justify-center backdrop-blur-md border border-white/25 hover:border-amber-400 transition-all duration-200 z-20 shadow-lg">
+          <i class="fa-solid fa-chevron-right text-xs sm:text-base"></i>
+        </button>
+
+        <!-- Thanh phân trang (Dots) -->
+        <div class="absolute bottom-2 sm:bottom-4 inset-x-0 flex justify-center items-center gap-2 sm:gap-3 z-20">
+          <button onclick="goToHeroSlide(0)" class="hero-dot w-6 sm:w-8 h-2 sm:h-2.5 rounded-full bg-amber-400 shadow transition-all duration-300" aria-label="Banner 1"></button>
+          <button onclick="goToHeroSlide(1)" class="hero-dot w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-white/60 hover:bg-white shadow transition-all duration-300" aria-label="Banner 2"></button>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- BỘ LỌC VÀ DANH MỤC SẢN PHẨM -->
+  <section id="san-pham" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- KHỐI GIỚI THIỆU Ý NGHĨA GIỎ QUÀ TẾT (FONT MỀM MẠI, CHỮ OMBRE, HIỆU ỨNG TỪ 2 BÊN) -->
+    <div id="intro-reveal-box" class="text-center max-w-4xl mx-auto mb-12 overflow-hidden px-3 sm:px-6 pt-2">
+      
+      <!-- Đoạn 1: Đi vào từ BÊN TRÁI (Font Cormorant Garamond mềm mại, thanh thoát, Ombre Đỏ Ruby - Vàng Kim) -->
+      <div class="intro-slide-left mb-4 sm:mb-6">
+        <h2 class="font-cormorant italic text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-semibold leading-relaxed tracking-wide text-ombre-title">
+          “Một giỏ quà Tết trọn vẹn không chỉ đẹp ở diện mạo sang trọng bên ngoài, mà còn đắt giá ở sự tâm huyết và thiết thực bên trong.”
+        </h2>
+      </div>
+
+      <!-- Dải phân cách hoa văn mềm mại -->
+      <div class="flex items-center justify-center gap-3 my-3 sm:my-5">
+        <div class="h-[1px] w-16 sm:w-32 bg-gradient-to-r from-transparent via-amber-400 to-transparent"></div>
+        <i class="fa-solid fa-sparkles text-amber-500 text-xs sm:text-sm"></i>
+        <div class="h-[1px] w-16 sm:w-32 bg-gradient-to-l from-transparent via-amber-400 to-transparent"></div>
+      </div>
+
+      <!-- Đoạn 2: Đi vào từ BÊN PHẢI (Font Cormorant Garamond mềm mại, Ombre Vàng Đồng - Đỏ Đô) -->
+      <div class="intro-slide-right">
+        <p class="font-cormorant italic text-lg sm:text-xl md:text-2xl font-medium leading-relaxed max-w-3xl mx-auto text-ombre-desc tracking-wide">
+          Với thiết kế tinh tế, giỏ quà vừa là điểm nhấn trang trí rực rỡ cho không gian ngày xuân thêm ấm cúng, vừa là món quà biếu đầy ý nghĩa thay bạn gửi trao lời chúc sung túc, bình an tới những người thân yêu.
+        </p>
+      </div>
+
+      <!-- BỘ LỌC PHÂN KHÚC GIÁ -->
+      <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mt-8">
+        <button onclick="filterProducts('all')" class="filter-btn active px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition bg-tet-red text-white shadow-sm" data-category="all">
+          Tất Cả Mẫu
+        </button>
+        <button onclick="filterProducts('duoi-600k')" class="filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition bg-white text-stone-700 hover:bg-stone-100 border border-stone-200" data-category="duoi-600k">
+          Giỏ Quà Bình Dân
+        </button>
+        <button onclick="filterProducts('600k-1200k')" class="filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition bg-white text-stone-700 hover:bg-stone-100 border border-stone-200" data-category="600k-1200k">
+          Giỏ Quà Sang Trọng
+        </button>
+        <button onclick="filterProducts('cao-cap')" class="filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition bg-white text-stone-700 hover:bg-stone-100 border border-stone-200" data-category="cao-cap">
+          Giỏ Quà Cao Cấp
+        </button>
+      </div>
+    </div>
+
+    <!-- DANH SÁCH GIỎ QUÀ GRID (TRÌNH BÀY GỌN GÀNG, CHUẨN CATALOGUE) -->
+    <div id="product-grid" class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+
+      <!-- SP 1: GIỎ QUÀ MAY MẮN (MÃ BD1) -->
+      <div id="product-bd1" onclick="openModalBD1()" class="product-card bg-white rounded-2xl overflow-hidden border border-stone-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" data-category="duoi-600k">
+        <div class="relative overflow-hidden aspect-[4/5] bg-stone-100">
+          <img src="images/bd1-may-man.jpg" alt="GIỎ QUÀ MAY MẮN - Mã BD1" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+          <!-- Nhãn Hot & Mã SP trên góc trái -->
+          <div class="absolute top-2.5 left-2.5 flex flex-col gap-1">
+            <span class="bg-red-700 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">Hot</span>
+            <span class="bg-amber-400 text-tet-darkred text-[10px] font-extrabold px-2 py-0.5 rounded shadow">Mã BD1</span>
+          </div>
+          <!-- Badge 4 góc chụp -->
+          <span class="absolute bottom-2 right-2 bg-stone-900/80 backdrop-blur-sm text-white text-[10px] font-medium px-2 py-0.5 rounded-full flex items-center gap-1 shadow">
+            <i class="fa-solid fa-images text-amber-300"></i> 4 ảnh
+          </span>
+        </div>
+        <div class="p-3.5 sm:p-4 text-center flex-1 flex flex-col justify-between bg-white">
+          <h3 class="font-serif text-sm sm:text-base font-bold text-stone-900 group-hover:text-tet-red transition leading-snug">
+            GIỎ QUÀ MAY MẮN
+          </h3>
+          <div class="mt-2.5 pt-2 border-t border-stone-100 space-y-1">
+            <div class="text-xs text-stone-600">
+              Giá lẻ: <strong class="text-stone-900 font-bold text-xs sm:text-sm">349.000đ</strong>
+            </div>
+            <div class="text-xs font-bold text-tet-red">
+              Giá sỉ: <span class="text-sm sm:text-base font-extrabold">329.000đ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SP 2: LINH DƯƠNG THƯỞNG CÁT (MÃ BD2) -->
+      <div id="product-bd2" onclick="openModalBD2()" class="product-card bg-white rounded-2xl overflow-hidden border border-stone-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" data-category="duoi-600k">
+        <div class="relative overflow-hidden aspect-[4/5] bg-stone-100">
+          <img src="images/bd2-linh-duong-thuong-cat.jpg" alt="LINH DƯƠNG THƯỞNG CÁT - Mã BD2" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+          <!-- Nhãn Hot & Mã SP trên góc trái -->
+          <div class="absolute top-2.5 left-2.5 flex flex-col gap-1">
+            <span class="bg-red-700 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">Hot</span>
+            <span class="bg-amber-400 text-tet-darkred text-[10px] font-extrabold px-2 py-0.5 rounded shadow">Mã BD2</span>
+          </div>
+          <!-- Badge 4 ảnh & 3 màu -->
+          <span class="absolute bottom-2 right-2 bg-stone-900/80 backdrop-blur-sm text-white text-[10px] font-medium px-2 py-0.5 rounded-full flex items-center gap-1 shadow">
+            <i class="fa-solid fa-palette text-amber-300"></i> 4 ảnh (3 màu)
+          </span>
+        </div>
+        <div class="p-3.5 sm:p-4 text-center flex-1 flex flex-col justify-between bg-white">
+          <h3 class="font-serif text-sm sm:text-base font-bold text-stone-900 group-hover:text-tet-red transition leading-snug">
+            LINH DƯƠNG THƯỞNG CÁT
+          </h3>
+          <div class="mt-2.5 pt-2 border-t border-stone-100 space-y-1">
+            <div class="text-xs text-stone-600">
+              Giá lẻ: <strong class="text-stone-900 font-bold text-xs sm:text-sm">399.000đ</strong>
+            </div>
+            <div class="text-xs font-bold text-tet-red">
+              Giá sỉ: <span class="text-sm sm:text-base font-extrabold">379.000đ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SP 3: ĐẠI CÁT ĐẠI LỢI (MÃ BD3) -->
+      <div id="product-bd3" onclick="openModalBD3()" class="product-card bg-white rounded-2xl overflow-hidden border border-stone-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" data-category="duoi-600k">
+        <div class="relative overflow-hidden aspect-[4/5] bg-stone-100">
+          <img src="images/bd3-dai-cat-dai-loi.jpg" alt="ĐẠI CÁT ĐẠI LỢI - Mã BD3" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+          <!-- Nhãn Hot & Mã SP trên góc trái -->
+          <div class="absolute top-2.5 left-2.5 flex flex-col gap-1">
+            <span class="bg-red-700 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">Hot</span>
+            <span class="bg-amber-400 text-tet-darkred text-[10px] font-extrabold px-2 py-0.5 rounded shadow">Mã BD3</span>
+          </div>
+        </div>
+        <div class="p-3.5 sm:p-4 text-center flex-1 flex flex-col justify-between bg-white">
+          <h3 class="font-serif text-sm sm:text-base font-bold text-stone-900 group-hover:text-tet-red transition leading-snug">
+            ĐẠI CÁT ĐẠI LỢI
+          </h3>
+          <div class="mt-2.5 pt-2 border-t border-stone-100 space-y-1">
+            <div class="text-xs text-stone-600">
+              Giá lẻ: <strong class="text-stone-900 font-bold text-xs sm:text-sm">409.000đ</strong>
+            </div>
+            <div class="text-xs font-bold text-tet-red">
+              Giá sỉ: <span class="text-sm sm:text-base font-extrabold">389.000đ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SP 4: TINH HOA HỘI TỤ (MÃ BD4) -->
+      <div id="product-bd4" onclick="openModalBD4()" class="product-card bg-white rounded-2xl overflow-hidden border border-stone-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" data-category="duoi-600k">
+        <div class="relative overflow-hidden aspect-[4/5] bg-stone-100">
+          <img src="images/bd4-tinh-hoa-hoi-tu.jpg" alt="TINH HOA HỘI TỤ - Mã BD4" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+          <!-- Nhãn Hot & Mã SP trên góc trái -->
+          <div class="absolute top-2.5 left-2.5 flex flex-col gap-1">
+            <span class="bg-red-700 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">Hot</span>
+            <span class="bg-amber-400 text-tet-darkred text-[10px] font-extrabold px-2 py-0.5 rounded shadow">Mã BD4</span>
+          </div>
+          <!-- Badge 4 ảnh -->
+          <span class="absolute bottom-2 right-2 bg-stone-900/80 backdrop-blur-sm text-white text-[10px] font-medium px-2 py-0.5 rounded-full flex items-center gap-1 shadow">
+            <i class="fa-solid fa-images text-amber-300"></i> 4 ảnh
+          </span>
+        </div>
+        <div class="p-3.5 sm:p-4 text-center flex-1 flex flex-col justify-between bg-white">
+          <h3 class="font-serif text-sm sm:text-base font-bold text-stone-900 group-hover:text-tet-red transition leading-snug">
+            TINH HOA HỘI TỤ
+          </h3>
+          <div class="mt-2.5 pt-2 border-t border-stone-100 space-y-1">
+            <div class="text-xs text-stone-600">
+              Giá lẻ: <strong class="text-stone-900 font-bold text-xs sm:text-sm">559.000đ</strong>
+            </div>
+            <div class="text-xs font-bold text-tet-red">
+              Giá sỉ: <span class="text-sm sm:text-base font-extrabold">529.000đ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ST1: MÃ ĐÁO THÀNH CÔNG -->
+      <div id="product-st1" onclick="openModalST1()" class="product-card bg-white rounded-2xl overflow-hidden border border-stone-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" data-category="600k-1200k">
+        <div class="relative overflow-hidden aspect-[4/5] bg-stone-100">
+          <img src="images/st1-ma-dao-thanh-cong.jpg" alt="MÃ ĐÁO THÀNH CÔNG - Mã ST1" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+          <div class="absolute top-2.5 left-2.5 flex flex-col gap-1">
+            <span class="bg-red-700 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">Hot</span>
+            <span class="bg-amber-400 text-tet-darkred text-[10px] font-extrabold px-2 py-0.5 rounded shadow">Mã ST1</span>
+          </div>
+          <!-- Badge 5 góc chụp -->
+          <span class="absolute bottom-2 right-2 bg-stone-900/80 backdrop-blur-sm text-white text-[10px] font-medium px-2 py-0.5 rounded-full flex items-center gap-1 shadow">
+            <i class="fa-solid fa-images text-amber-300"></i> 5 ảnh
+          </span>
+        </div>
+        <div class="p-3.5 sm:p-4 text-center flex-1 flex flex-col justify-between bg-white">
+          <h3 class="font-serif text-sm sm:text-base font-bold text-stone-900 group-hover:text-tet-red transition leading-snug">
+            MÃ ĐÁO THÀNH CÔNG
+          </h3>
+          <div class="mt-2.5 pt-2 border-t border-stone-100 space-y-1">
+            <div class="text-xs text-stone-600">
+              Giá lẻ: <strong class="text-stone-900 font-bold text-xs sm:text-sm">669.000đ</strong>
+            </div>
+            <div class="text-xs font-bold text-tet-red">
+              Giá sỉ: <span class="text-sm sm:text-base font-extrabold">649.000đ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ST2: BÁCH NIÊN THỊNH VƯỢNG -->
+      <div id="product-st2" onclick="openModalST2()" class="product-card bg-white rounded-2xl overflow-hidden border border-stone-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" data-category="600k-1200k">
+        <div class="relative overflow-hidden aspect-[4/5] bg-stone-100">
+          <img src="images/st2-bach-nien-thinh-vuong.jpg" alt="BÁCH NIÊN THỊNH VƯỢNG - Mã ST2" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+          <div class="absolute top-2.5 left-2.5 flex flex-col gap-1">
+            <span class="bg-red-700 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">Hot</span>
+            <span class="bg-amber-400 text-tet-darkred text-[10px] font-extrabold px-2 py-0.5 rounded shadow">Mã ST2</span>
+          </div>
+          <!-- Badge 5 góc chụp -->
+          <span class="absolute bottom-2 right-2 bg-stone-900/80 backdrop-blur-sm text-white text-[10px] font-medium px-2 py-0.5 rounded-full flex items-center gap-1 shadow">
+            <i class="fa-solid fa-images text-amber-300"></i> 5 ảnh
+          </span>
+        </div>
+        <div class="p-3.5 sm:p-4 text-center flex-1 flex flex-col justify-between bg-white">
+          <h3 class="font-serif text-sm sm:text-base font-bold text-stone-900 group-hover:text-tet-red transition leading-snug">
+            BÁCH NIÊN THỊNH VƯỢNG
+          </h3>
+          <div class="mt-2.5 pt-2 border-t border-stone-100 space-y-1">
+            <div class="text-xs text-stone-600">
+              Giá lẻ: <strong class="text-stone-900 font-bold text-xs sm:text-sm">689.000đ</strong>
+            </div>
+            <div class="text-xs font-bold text-tet-red">
+              Giá sỉ: <span class="text-sm sm:text-base font-extrabold">669.000đ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ST3: HOÀNG KIM PHÚ QUÝ -->
+      <div id="product-st3" onclick="openModalST3()" class="product-card bg-white rounded-2xl overflow-hidden border border-stone-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" data-category="600k-1200k">
+        <div class="relative overflow-hidden aspect-[4/5] bg-stone-100">
+          <img src="images/st3-hoang-kim-phu-quy.jpg" alt="HOÀNG KIM PHÚ QUÝ - Mã ST3" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+          <div class="absolute top-2.5 left-2.5 flex flex-col gap-1">
+            <span class="bg-red-700 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">Hot</span>
+            <span class="bg-amber-400 text-tet-darkred text-[10px] font-extrabold px-2 py-0.5 rounded shadow">Mã ST3</span>
+          </div>
+          <!-- Badge 4 góc chụp -->
+          <span class="absolute bottom-2 right-2 bg-stone-900/80 backdrop-blur-sm text-white text-[10px] font-medium px-2 py-0.5 rounded-full flex items-center gap-1 shadow">
+            <i class="fa-solid fa-images text-amber-300"></i> 4 ảnh
+          </span>
+        </div>
+        <div class="p-3.5 sm:p-4 text-center flex-1 flex flex-col justify-between bg-white">
+          <h3 class="font-serif text-sm sm:text-base font-bold text-stone-900 group-hover:text-tet-red transition leading-snug">
+            HOÀNG KIM PHÚ QUÝ
+          </h3>
+          <div class="mt-2.5 pt-2 border-t border-stone-100 space-y-1">
+            <div class="text-xs text-stone-600">
+              Giá lẻ: <strong class="text-stone-900 font-bold text-xs sm:text-sm">699.000đ</strong>
+            </div>
+            <div class="text-xs font-bold text-tet-red">
+              Giá sỉ: <span class="text-sm sm:text-base font-extrabold">679.000đ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ST4: AN KHANG THỊNH VƯỢNG -->
+      <div id="product-st4" onclick="openModalST4()" class="product-card bg-white rounded-2xl overflow-hidden border border-stone-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" data-category="600k-1200k">
+        <div class="relative overflow-hidden aspect-[4/5] bg-stone-100">
+          <img src="images/st4-an-khang-thinh-vuong.jpg" alt="AN KHANG THỊNH VƯỢNG - Mã ST4" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+          <div class="absolute top-2.5 left-2.5 flex flex-col gap-1">
+            <span class="bg-red-700 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">Hot</span>
+            <span class="bg-amber-400 text-tet-darkred text-[10px] font-extrabold px-2 py-0.5 rounded shadow">Mã ST4</span>
+          </div>
+          <!-- Badge 4 góc chụp -->
+          <span class="absolute bottom-2 right-2 bg-stone-900/80 backdrop-blur-sm text-white text-[10px] font-medium px-2 py-0.5 rounded-full flex items-center gap-1 shadow">
+            <i class="fa-solid fa-images text-amber-300"></i> 4 ảnh
+          </span>
+        </div>
+        <div class="p-3.5 sm:p-4 text-center flex-1 flex flex-col justify-between bg-white">
+          <h3 class="font-serif text-sm sm:text-base font-bold text-stone-900 group-hover:text-tet-red transition leading-snug">
+            AN KHANG THỊNH VƯỢNG
+          </h3>
+          <div class="mt-2.5 pt-2 border-t border-stone-100 space-y-1">
+            <div class="text-xs text-stone-600">
+              Giá lẻ: <strong class="text-stone-900 font-bold text-xs sm:text-sm">699.000đ</strong>
+            </div>
+            <div class="text-xs font-bold text-tet-red">
+              Giá sỉ: <span class="text-sm sm:text-base font-extrabold">679.000đ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ST5: GÓI TRỌN VỊ XUÂN -->
+      <div id="product-st5" onclick="openModalST5()" class="product-card bg-white rounded-2xl overflow-hidden border border-stone-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" data-category="600k-1200k">
+        <div class="relative overflow-hidden aspect-[4/5] bg-stone-100">
+          <img src="images/st5-goi-tron-vi-xuan.jpg" alt="GÓI TRỌN VỊ XUÂN - Mã ST5" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+          <div class="absolute top-2.5 left-2.5 flex flex-col gap-1">
+            <span class="bg-red-700 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">Hot</span>
+            <span class="bg-amber-400 text-tet-darkred text-[10px] font-extrabold px-2 py-0.5 rounded shadow">Mã ST5</span>
+          </div>
+          <!-- Badge 4 góc chụp -->
+          <span class="absolute bottom-2 right-2 bg-stone-900/80 backdrop-blur-sm text-white text-[10px] font-medium px-2 py-0.5 rounded-full flex items-center gap-1 shadow">
+            <i class="fa-solid fa-images text-amber-300"></i> 4 ảnh
+          </span>
+        </div>
+        <div class="p-3.5 sm:p-4 text-center flex-1 flex flex-col justify-between bg-white">
+          <h3 class="font-serif text-sm sm:text-base font-bold text-stone-900 group-hover:text-tet-red transition leading-snug">
+            GÓI TRỌN VỊ XUÂN
+          </h3>
+          <div class="mt-2.5 pt-2 border-t border-stone-100 space-y-1">
+            <div class="text-xs text-stone-600">
+              Giá lẻ: <strong class="text-stone-900 font-bold text-xs sm:text-sm">699.000đ</strong>
+            </div>
+            <div class="text-xs font-bold text-tet-red">
+              Giá sỉ: <span class="text-sm sm:text-base font-extrabold">679.000đ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ST6: SẮC XUÂN RẠNG RỠ -->
+      <div id="product-st6" onclick="openModalST6()" class="product-card bg-white rounded-2xl overflow-hidden border border-stone-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" data-category="600k-1200k">
+        <div class="relative overflow-hidden aspect-[4/5] bg-stone-100">
+          <img src="images/st6-sac-xuan-rang-ro.jpg" alt="SẮC XUÂN RẠNG RỠ - Mã ST6" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+          <div class="absolute top-2.5 left-2.5 flex flex-col gap-1">
+            <span class="bg-red-700 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">Hot</span>
+            <span class="bg-amber-400 text-tet-darkred text-[10px] font-extrabold px-2 py-0.5 rounded shadow">Mã ST6</span>
+          </div>
+          <!-- Badge 5 góc chụp -->
+          <span class="absolute bottom-2 right-2 bg-stone-900/80 backdrop-blur-sm text-white text-[10px] font-medium px-2 py-0.5 rounded-full flex items-center gap-1 shadow">
+            <i class="fa-solid fa-images text-amber-300"></i> 5 ảnh
+          </span>
+        </div>
+        <div class="p-3.5 sm:p-4 text-center flex-1 flex flex-col justify-between bg-white">
+          <h3 class="font-serif text-sm sm:text-base font-bold text-stone-900 group-hover:text-tet-red transition leading-snug">
+            SẮC XUÂN RẠNG RỠ
+          </h3>
+          <div class="mt-2.5 pt-2 border-t border-stone-100 space-y-1">
+            <div class="text-xs text-stone-600">
+              Giá lẻ: <strong class="text-stone-900 font-bold text-xs sm:text-sm">719.000đ</strong>
+            </div>
+            <div class="text-xs font-bold text-tet-red">
+              Giá sỉ: <span class="text-sm sm:text-base font-extrabold">699.000đ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ST7: PHÚC LỘC THỌ -->
+      <div id="product-st7" onclick="openModalST7()" class="product-card bg-white rounded-2xl overflow-hidden border border-stone-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" data-category="600k-1200k">
+        <div class="relative overflow-hidden aspect-[4/5] bg-stone-100">
+          <img src="images/st7-phuc-loc-tho.jpg" alt="PHÚC LỘC THỌ - Mã ST7" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+          <div class="absolute top-2.5 left-2.5 flex flex-col gap-1">
+            <span class="bg-red-700 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">Hot</span>
+            <span class="bg-amber-400 text-tet-darkred text-[10px] font-extrabold px-2 py-0.5 rounded shadow">Mã ST7</span>
+          </div>
+          <!-- Badge 4 góc chụp -->
+          <span class="absolute bottom-2 right-2 bg-stone-900/80 backdrop-blur-sm text-white text-[10px] font-medium px-2 py-0.5 rounded-full flex items-center gap-1 shadow">
+            <i class="fa-solid fa-images text-amber-300"></i> 4 ảnh
+          </span>
+        </div>
+        <div class="p-3.5 sm:p-4 text-center flex-1 flex flex-col justify-between bg-white">
+          <h3 class="font-serif text-sm sm:text-base font-bold text-stone-900 group-hover:text-tet-red transition leading-snug">
+            PHÚC LỘC THỌ
+          </h3>
+          <div class="mt-2.5 pt-2 border-t border-stone-100 space-y-1">
+            <div class="text-xs text-stone-600">
+              Giá lẻ: <strong class="text-stone-900 font-bold text-xs sm:text-sm">729.000đ</strong>
+            </div>
+            <div class="text-xs font-bold text-tet-red">
+              Giá sỉ: <span class="text-sm sm:text-base font-extrabold">699.000đ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CC3: VẠN SỰ NHƯ Ý -->
+      <div id="product-cc3" onclick="openModalCC3()" class="product-card bg-white rounded-2xl overflow-hidden border border-stone-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" data-category="cao-cap">
+        <div class="relative overflow-hidden aspect-[4/5] bg-stone-100">
+          <img src="images/cc3-van-su-nhu-y.jpg" alt="VẠN SỰ NHƯ Ý - Mã CC3" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+          <div class="absolute top-2.5 left-2.5 flex flex-col gap-1">
+            <span class="bg-red-700 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">VIP</span>
+            <span class="bg-amber-400 text-tet-darkred text-[10px] font-extrabold px-2 py-0.5 rounded shadow">Mã CC3</span>
+          </div>
+          <span class="absolute bottom-2 right-2 bg-stone-900/80 backdrop-blur-sm text-white text-[10px] font-medium px-2 py-0.5 rounded-full flex items-center gap-1 shadow">
+            <i class="fa-solid fa-images text-amber-300"></i> 8 ảnh
+          </span>
+        </div>
+        <div class="p-3.5 sm:p-4 text-center flex-1 flex flex-col justify-between bg-white">
+          <h3 class="font-serif text-sm sm:text-base font-bold text-stone-900 group-hover:text-tet-red transition leading-snug">
+            VẠN SỰ NHƯ Ý
+          </h3>
+          <div class="mt-2.5 pt-2 border-t border-stone-100 space-y-1">
+            <div class="text-xs text-stone-600">
+              Giá lẻ: <strong class="text-stone-900 font-bold text-xs sm:text-sm">849.000đ</strong>
+            </div>
+            <div class="text-xs font-bold text-tet-red">
+              Giá sỉ: <span class="text-sm sm:text-base font-extrabold">809.000đ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CC1: BÁCH NIÊN PHÚ QUÝ -->
+      <div id="product-cc1" onclick="openModalCC1()" class="product-card bg-white rounded-2xl overflow-hidden border border-stone-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" data-category="cao-cap">
+        <div class="relative overflow-hidden aspect-[4/5] bg-stone-100">
+          <img src="images/cc1-bach-nien-phu-quy.jpg" alt="BÁCH NIÊN PHÚ QUÝ - Mã CC1" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+          <div class="absolute top-2.5 left-2.5 flex flex-col gap-1">
+            <span class="bg-red-700 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">VIP</span>
+            <span class="bg-amber-400 text-tet-darkred text-[10px] font-extrabold px-2 py-0.5 rounded shadow">Mã CC1</span>
+          </div>
+          <span class="absolute bottom-2 right-2 bg-stone-900/80 backdrop-blur-sm text-white text-[10px] font-medium px-2 py-0.5 rounded-full flex items-center gap-1 shadow">
+            <i class="fa-solid fa-images text-amber-300"></i> 7 ảnh (Hộp Vali)
+          </span>
+        </div>
+        <div class="p-3.5 sm:p-4 text-center flex-1 flex flex-col justify-between bg-white">
+          <h3 class="font-serif text-sm sm:text-base font-bold text-stone-900 group-hover:text-tet-red transition leading-snug">
+            BÁCH NIÊN PHÚ QUÝ
+          </h3>
+          <div class="mt-2.5 pt-2 border-t border-stone-100 space-y-1">
+            <div class="text-xs text-stone-600">
+              Giá lẻ: <strong class="text-stone-900 font-bold text-xs sm:text-sm">969.000đ</strong>
+            </div>
+            <div class="text-xs font-bold text-tet-red">
+              Giá sỉ: <span class="text-sm sm:text-base font-extrabold">939.000đ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CC2: THỊNH VƯỢNG CÁT TƯỜNG -->
+      <div id="product-cc2" onclick="openModalCC2()" class="product-card bg-white rounded-2xl overflow-hidden border border-stone-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" data-category="cao-cap">
+        <div class="relative overflow-hidden aspect-[4/5] bg-stone-100">
+          <img src="images/cc2-thinh-vuong-cat-tuong.jpg" alt="THỊNH VƯỢNG CÁT TƯỜNG - Mã CC2" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+          <div class="absolute top-2.5 left-2.5 flex flex-col gap-1">
+            <span class="bg-red-700 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">VIP</span>
+            <span class="bg-amber-400 text-tet-darkred text-[10px] font-extrabold px-2 py-0.5 rounded shadow">Mã CC2</span>
+          </div>
+          <span class="absolute bottom-2 right-2 bg-stone-900/80 backdrop-blur-sm text-white text-[10px] font-medium px-2 py-0.5 rounded-full flex items-center gap-1 shadow">
+            <i class="fa-solid fa-images text-amber-300"></i> 9 ảnh (Hộp Vali)
+          </span>
+        </div>
+        <div class="p-3.5 sm:p-4 text-center flex-1 flex flex-col justify-between bg-white">
+          <h3 class="font-serif text-sm sm:text-base font-bold text-stone-900 group-hover:text-tet-red transition leading-snug">
+            THỊNH VƯỢNG CÁT TƯỜNG
+          </h3>
+          <div class="mt-2.5 pt-2 border-t border-stone-100 space-y-1">
+            <div class="text-xs text-stone-600">
+              Giá lẻ: <strong class="text-stone-900 font-bold text-xs sm:text-sm">989.000đ</strong>
+            </div>
+            <div class="text-xs font-bold text-tet-red">
+              Giá sỉ: <span class="text-sm sm:text-base font-extrabold">969.000đ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CHÍNH SÁCH & LÝ DO CHỌN GIỎ QUÀ TẾT KIỀU TRANG -->
+  <section id="chinh-sach-b2b" class="bg-stone-900 text-white py-16 md:py-20 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-amber-400 font-bold text-xs md:text-sm tracking-widest uppercase">Uy Tín & Tận Tâm Hàng Đầu</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold mt-2">
+          Vì sao nên chọn Giỏ Quà Tết Kiều Trang?
+        </h2>
+        <p class="text-stone-300 text-sm sm:text-base mt-3">
+          Tận tâm trong từng set quà, mang trọn vẹn thành ý và sự sung túc đến gia đình, người thân và đối tác.
+        </p>
+      </div>
+
+      <!-- Grid 5 lợi thế độc quyền (Khớp chính xác 5 cam kết trên ảnh) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        
+        <div class="reveal-card bg-white/5 border border-white/10 p-5 rounded-2xl hover:border-amber-400/50 transition flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-amber-400/10 text-amber-400 flex items-center justify-center text-xl mb-3">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <h4 class="font-serif text-base font-bold text-white">Tính Thẩm Mỹ Cao</h4>
+            <p class="text-xs text-stone-400 mt-2 leading-relaxed">
+              Phối màu hài hòa, có điểm nhấn tinh tế, tạo ấn tượng sang trọng ngay từ cái nhìn đầu tiên.
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal-card bg-white/5 border border-white/10 p-5 rounded-2xl hover:border-amber-400/50 transition flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-amber-400/10 text-amber-400 flex items-center justify-center text-xl mb-3">
+              <i class="fa-solid fa-award"></i>
+            </div>
+            <h4 class="font-serif text-base font-bold text-white">Nguồn Gốc Rõ Ràng</h4>
+            <p class="text-xs text-stone-400 mt-2 leading-relaxed">
+              Bánh kẹo thương hiệu uy tín, date xa mới sản xuất, tuyệt đối không cận date hay hàng trôi nổi.
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal-card bg-white/5 border border-white/10 p-5 rounded-2xl hover:border-amber-400/50 transition flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-amber-400/10 text-amber-400 flex items-center justify-center text-xl mb-3">
+              <i class="fa-solid fa-layer-group"></i>
+            </div>
+            <h4 class="font-serif text-base font-bold text-white">Đa Dạng Phân Khúc</h4>
+            <p class="text-xs text-stone-400 mt-2 leading-relaxed">
+              Nhiều mức giá từ bình dân đến cao cấp, giá cả minh bạch công khai, dễ dàng lựa chọn.
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal-card bg-white/5 border border-white/10 p-5 rounded-2xl hover:border-amber-400/50 transition flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-amber-400/10 text-amber-400 flex items-center justify-center text-xl mb-3">
+              <i class="fa-solid fa-percent"></i>
+            </div>
+            <h4 class="font-serif text-base font-bold text-white">Chiết Khấu Đơn Lớn</h4>
+            <p class="text-xs text-stone-400 mt-2 leading-relaxed">
+              Chính sách giá sỉ ưu đãi hấp dẫn, tiết kiệm tối đa ngân sách cho cá nhân & doanh nghiệp.
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal-card bg-white/5 border border-white/10 p-5 rounded-2xl hover:border-amber-400/50 transition flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-amber-400/10 text-amber-400 flex items-center justify-center text-xl mb-3">
+              <i class="fa-solid fa-file-invoice-dollar"></i>
+            </div>
+            <h4 class="font-serif text-base font-bold text-white">Hóa Đơn VAT Đầy Đủ</h4>
+            <p class="text-xs text-stone-400 mt-2 leading-relaxed">
+              Xuất hóa đơn đỏ VAT hợp lệ, hợp đồng rõ ràng, chứng từ chứng nhận ATTP đầy đủ.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-stone-950 text-stone-400 text-xs py-12 border-t border-stone-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div class="space-y-3">
+        <div class="flex items-center gap-2 text-white font-serif text-xl font-bold">
+          <div class="w-8 h-8 rounded-full red-gradient flex items-center justify-center text-amber-300 text-xs font-bold">2027</div>
+          <span>GIỎ QUÀ TẾT KIỀU TRANG</span>
+        </div>
+        <p class="leading-relaxed text-stone-400 max-w-md">
+          Chuyên sỉ & lẻ giỏ quà Tết Đinh Mùi 2027, bánh kẹo từ hãng uy tín, chất lượng, không cận date, đa dạng mẫu mã, giá cả cạnh tranh.
+        </p>
+      </div>
+
+      <div class="md:text-right space-y-3">
+        <h5 class="text-white font-bold text-sm mb-2">Thông Tin Liên Hệ</h5>
+        <div class="flex items-center md:justify-end gap-2 text-stone-300">
+          <i class="fa-solid fa-location-dot text-amber-400"></i>
+          <span>Địa điểm: <strong class="text-white">Đường số 11, Gò Vấp, Hồ Chí Minh</strong></span>
+        </div>
+        <div class="flex items-center md:justify-end gap-2 text-stone-300">
+          <i class="fa-solid fa-phone text-amber-400"></i>
+          <span>SĐT / Zalo: <a href="tel:0393475677" class="text-amber-400 font-bold hover:underline text-sm">039 347 5677</a></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 pt-6 border-t border-stone-800 text-center text-stone-500">
+      &copy; 2027 Giỏ Quà Tết Kiều Trang. Tất cả quyền được bảo lưu.
+    </div>
+  </footer>
+
+  <!-- NÚT LIÊN HỆ NỔI (STICKY ACTION BAR: ZALO + HOTLINE) -->
+  <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+    <!-- Nút Zalo -->
+    <a href="https://zalo.me/0393475677" target="_blank" class="w-14 h-14 rounded-full bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center text-2xl shadow-xl hover:scale-110 transition duration-300 relative group" title="Chat Zalo ngay">
+      <i class="fa-solid fa-comment-dots"></i>
+      <span class="absolute right-16 bg-stone-900 text-white text-xs px-3 py-1.5 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition shadow-lg pointer-events-none">
+        Chat Zalo: 039 347 5677
+      </span>
+      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-30"></span>
+    </a>
+    <!-- Nút Gọi điện -->
+    <a href="tel:0393475677" class="w-14 h-14 rounded-full bg-tet-red hover:bg-tet-darkred text-white flex items-center justify-center text-2xl shadow-xl hover:scale-110 transition duration-300 relative group" title="Gọi Hotline">
+      <i class="fa-solid fa-phone"></i>
+      <span class="absolute right-16 bg-stone-900 text-white text-xs px-3 py-1.5 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition shadow-lg pointer-events-none">
+        Hotline: 039 347 5677
+      </span>
+    </a>
+  </div>
+
+  <!-- POPUP MODAL XEM CHI TIẾT SẢN PHẨM & GALLERY ẢNH (BỐ CỤC CHUẨN CATALOGUE CAO CẤP) -->
+  <div id="product-modal" onclick="if(event.target === this) closeModal()" class="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-6 overflow-y-auto cursor-pointer">
+    <div class="bg-white rounded-3xl max-w-4xl w-full overflow-hidden shadow-2xl animate-fade-in relative my-auto border border-stone-200 cursor-default">
+      
+      <!-- Nút đóng X ở góc trên bên phải -->
+      <button onclick="closeModal()" class="absolute top-4 right-4 z-30 w-10 h-10 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-700 flex items-center justify-center transition shadow-sm" title="Đóng">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+
+      <div class="p-4 sm:p-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 items-start">
+          
+          <!-- CỘT TRÁI: 4 HÌNH THUMBNAIL DỌC + 1 HÌNH CHÍNH LỚN -->
+          <div class="lg:col-span-7 flex flex-row gap-3 sm:gap-4 items-start">
+            
+            <!-- Cột Thumbnail Dọc bên cạnh ảnh chính (kèm nút mũi tên lên/xuống) -->
+            <div id="modal-thumbs-wrapper" class="flex flex-col items-center gap-2 w-16 sm:w-20 flex-shrink-0">
+              <!-- Mũi tên lên -->
+              <button onclick="prevModalImg()" class="w-8 h-8 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-600 flex items-center justify-center transition text-xs shadow-xs" title="Ảnh trước">
+                <i class="fa-solid fa-chevron-up"></i>
+              </button>
+              
+              <!-- Danh sách hình ảnh thu nhỏ đặt dọc -->
+              <div id="modal-thumbs-vertical" class="flex flex-col gap-2 w-full max-h-[360px] sm:max-h-[460px] overflow-y-auto no-scrollbar">
+                <!-- Javascript sẽ render các ảnh thu nhỏ vào đây -->
+              </div>
+
+              <!-- Mũi tên xuống -->
+              <button onclick="nextModalImg()" class="w-8 h-8 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-600 flex items-center justify-center transition text-xs shadow-xs" title="Ảnh tiếp theo">
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            </div>
+
+            <!-- Khung Ảnh Chính Lớn -->
+            <div class="flex-1 relative rounded-2xl overflow-hidden aspect-[4/5] bg-stone-50 border border-stone-200 shadow-sm flex items-center justify-center">
+              <img id="modal-img" src="" alt="Hình ảnh giỏ quà tết" class="w-full h-full object-cover transition-all duration-300">
+              
+              <!-- Badge chỉ số ảnh (Ví dụ: Ảnh 1/4) -->
+              <div id="modal-img-counter" class="absolute bottom-3 right-3 bg-stone-900/75 backdrop-blur-sm text-white text-[11px] font-medium px-2.5 py-1 rounded-full shadow">
+                Ảnh 1/4
+              </div>
+            </div>
+          </div>
+
+          <!-- CỘT PHẢI: TÊN GIỎ NỔI BẬT + GIÁ + THÀNH PHẦN DỄ NHÌN -->
+          <div class="lg:col-span-5 flex flex-col justify-between pt-1">
+            <div>
+              <!-- Nhãn Tags: Hot, Mã SP -->
+              <div id="modal-badges" class="flex flex-wrap items-center gap-2 mb-2">
+                <span class="bg-red-700 text-white text-[11px] font-bold px-2.5 py-0.5 rounded shadow-sm">Hot</span>
+                <span id="modal-code-badge" class="bg-amber-400 text-tet-darkred text-[11px] font-extrabold px-2.5 py-0.5 rounded shadow-sm">Mã BD1</span>
+                <span class="bg-emerald-100 text-emerald-800 text-[11px] font-bold px-2 py-0.5 rounded">Hàng Chính Hãng</span>
+              </div>
+
+              <!-- Tên Giỏ Quà Nổi Bật (Font Serif trang trọng, màu đỏ ruby nổi bật) -->
+              <h2 id="modal-title" class="font-serif text-2xl sm:text-3xl font-extrabold text-tet-red tracking-tight leading-snug">
+                GIỎ QUÀ MAY MẮN
+              </h2>
+
+              <!-- Khu vực hiển thị giá sỉ & lẻ -->
+              <div class="mt-3 pb-3 border-b border-stone-200">
+                <div class="flex items-baseline justify-between">
+                  <span class="text-xs text-stone-500 font-semibold uppercase tracking-wider">Giá bán lẻ:</span>
+                  <span id="modal-price-retail" class="text-2xl sm:text-3xl font-extrabold text-stone-900">349.000đ</span>
+                </div>
+                <div class="flex items-baseline justify-between mt-1.5">
+                  <span class="text-xs font-bold text-tet-red uppercase tracking-wider">Giá sỉ (≥ 10 giỏ):</span>
+                  <span id="modal-price-wholesale" class="text-xl sm:text-2xl font-black text-tet-red">329.000đ</span>
+                </div>
+                <div class="text-[11px] text-amber-800 font-medium mt-1.5 flex items-center gap-1.5 bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-200/60">
+                  <i class="fa-solid fa-file-invoice text-emerald-600"></i>
+                  <span>Xuất hóa đơn VAT đầy đủ • Tặng thiệp chúc</span>
+                </div>
+              </div>
+
+              <!-- Thành phần chi tiết giỏ quà (Chỉ để dấu tích thoáng đãng, không đóng khung từng dòng) -->
+              <div class="mt-4">
+                <div class="text-xs font-bold text-stone-900 uppercase tracking-wider flex items-center gap-1.5 mb-3">
+                  <i class="fa-solid fa-basket-shopping text-tet-red"></i>
+                  <span>THÀNH PHẦN TRONG GIỎ:</span>
+                </div>
+                
+                <div id="modal-ingredients-list" class="text-xs sm:text-sm text-stone-700"></div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT XỬ LÝ TƯƠNG TÁC -->
+  <script>
+    // === XỬ LÝ HERO BANNER SLIDER (ẢNH BÌA) TỰ ĐỘNG CHUYỂN MỖI 3 GIÂY ===
+    let currentHeroSlide = 0;
+    let heroTimer = null;
+
+    function showHeroSlide(index) {
+      const slides = document.querySelectorAll('.hero-slide');
+      const dots = document.querySelectorAll('.hero-dot');
+      if (!slides.length) return;
+
+      if (index >= slides.length) currentHeroSlide = 0;
+      else if (index < 0) currentHeroSlide = slides.length - 1;
+      else currentHeroSlide = index;
+
+      slides.forEach((slide, i) => {
+        if (i === currentHeroSlide) {
+          slide.style.opacity = '1';
+          slide.style.zIndex = '10';
+          slide.style.pointerEvents = 'auto';
+        } else {
+          slide.style.opacity = '0';
+          slide.style.zIndex = '0';
+          slide.style.pointerEvents = 'none';
+        }
+      });
+
+      dots.forEach((dot, i) => {
+        if (i === currentHeroSlide) {
+          dot.className = 'hero-dot w-6 sm:w-8 h-2 sm:h-2.5 rounded-full bg-amber-400 shadow transition-all duration-300';
+        } else {
+          dot.className = 'hero-dot w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-white/60 hover:bg-white shadow transition-all duration-300';
+        }
+      });
+    }
+
+    function nextHeroSlide() {
+      showHeroSlide(currentHeroSlide + 1);
+      resetHeroTimer();
+    }
+
+    function prevHeroSlide() {
+      showHeroSlide(currentHeroSlide - 1);
+      resetHeroTimer();
+    }
+
+    function goToHeroSlide(index) {
+      showHeroSlide(index);
+      resetHeroTimer();
+    }
+
+    function startHeroTimer() {
+      if (heroTimer) clearInterval(heroTimer);
+      heroTimer = setInterval(() => {
+        showHeroSlide(currentHeroSlide + 1);
+      }, 3000); // Tự động chuyển hình đúng sau 3 giây
+    }
+
+    function resetHeroTimer() {
+      startHeroTimer();
+    }
+
+    // Khởi động đồng hồ đếm 3s ngay lập tức (không dừng khi chuột lướt qua để luôn tự động đổi hình)
+    startHeroTimer();
+
+    window.addEventListener('load', () => {
+      startHeroTimer();
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      startHeroTimer();
+      initScrollReveal(); // Khởi tạo hiệu ứng kéo tới đâu giỏ quà xuất hiện tới đó
+      const heroCarousel = document.getElementById('hero-carousel');
+      if (heroCarousel) {
+        let touchStartX = 0;
+        heroCarousel.addEventListener('touchstart', (e) => {
+          touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        heroCarousel.addEventListener('touchend', (e) => {
+          const touchEndX = e.changedTouches[0].screenX;
+          if (touchStartX - touchEndX > 40) nextHeroSlide();
+          else if (touchEndX - touchStartX > 40) prevHeroSlide();
+        }, { passive: true });
+      }
+    });
+
+    // Khởi tạo hiệu ứng Scroll Reveal khi kéo tới đâu giỏ quà xuất hiện tới đó
+    function initScrollReveal() {
+      // Hiệu ứng chữ đi vào từ 2 bên cho khối giới thiệu ý nghĩa giỏ quà
+      const introBox = document.getElementById('intro-reveal-box');
+      if (introBox) {
+        if ('IntersectionObserver' in window) {
+          const introObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const left = introBox.querySelector('.intro-slide-left');
+                const right = introBox.querySelector('.intro-slide-right');
+                if (left) left.classList.add('revealed');
+                if (right) right.classList.add('revealed');
+                introObserver.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+          introObserver.observe(introBox);
+        } else {
+          const left = introBox.querySelector('.intro-slide-left');
+          const right = introBox.querySelector('.intro-slide-right');
+          if (left) left.classList.add('revealed');
+          if (right) right.classList.add('revealed');
+        }
+      }
+
+      const productCards = document.querySelectorAll('.product-card');
+      const revealCards = document.querySelectorAll('.reveal-card');
+
+      if ('IntersectionObserver' in window) {
+        const observerOptions = {
+          root: null,
+          rootMargin: '0px 0px -40px 0px', // Bắt đầu xuất hiện trước khi chạm hẳn mép dưới 40px
+          threshold: 0.1
+        };
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const el = entry.target;
+              // Nếu là thẻ giỏ quà, tạo độ trễ so le theo cột để tạo hiệu ứng gợn sóng lượn đẹp mắt
+              if (el.classList.contains('product-card')) {
+                const parent = el.parentElement;
+                const visibleSiblings = Array.from(parent.querySelectorAll('.product-card:not([style*="display: none"])'));
+                const colIndex = visibleSiblings.indexOf(el);
+                const staggerDelay = (colIndex >= 0 ? colIndex % 4 : 0) * 110;
+
+                setTimeout(() => {
+                  el.classList.add('revealed');
+                }, staggerDelay);
+              } else {
+                // Các khối lợi ích
+                const parent = el.parentElement;
+                const siblings = Array.from(parent.children);
+                const idx = siblings.indexOf(el);
+                const staggerDelay = (idx >= 0 ? idx : 0) * 80;
+
+                setTimeout(() => {
+                  el.classList.add('revealed');
+                }, staggerDelay);
+              }
+
+              observer.unobserve(el);
+            }
+          });
+        }, observerOptions);
+
+        productCards.forEach(card => revealObserver.observe(card));
+        revealCards.forEach(card => revealObserver.observe(card));
+      } else {
+        // Fallback
+        productCards.forEach(card => card.classList.add('revealed'));
+        revealCards.forEach(card => card.classList.add('revealed'));
+      }
+    }
+
+    // Biến lưu trữ danh sách ảnh của modal hiện tại
+    let currentModalImages = [];
+    let currentImgIndex = 0;
+
+    // Render danh sách thumbnail dọc bên cạnh ảnh chính
+    function renderModalThumbnails() {
+      const container = document.getElementById('modal-thumbs-vertical');
+      const counter = document.getElementById('modal-img-counter');
+      const wrapper = document.getElementById('modal-thumbs-wrapper');
+      container.innerHTML = '';
+
+      if (!currentModalImages || currentModalImages.length === 0) return;
+
+      document.getElementById('modal-img').src = currentModalImages[currentImgIndex];
+      counter.innerText = `Ảnh ${currentImgIndex + 1}/${currentModalImages.length}`;
+
+      if (currentModalImages.length <= 1) {
+        wrapper.classList.add('hidden');
+        counter.classList.add('hidden');
+      } else {
+        wrapper.classList.remove('hidden');
+        counter.classList.remove('hidden');
+        currentModalImages.forEach((imgSrc, idx) => {
+          const thumb = document.createElement('div');
+          const isActive = idx === currentImgIndex;
+          thumb.className = `w-full aspect-[4/5] rounded-xl overflow-hidden border-2 cursor-pointer transition-all duration-200 bg-stone-100 flex-shrink-0 ${isActive ? 'border-tet-red ring-2 ring-red-300 shadow opacity-100' : 'border-stone-200 opacity-60 hover:opacity-100 hover:border-stone-400'}`;
+          thumb.innerHTML = `<img src="${imgSrc}" class="w-full h-full object-cover">`;
+          thumb.onclick = () => {
+            currentImgIndex = idx;
+            renderModalThumbnails();
+          };
+          container.appendChild(thumb);
+        });
+      }
+    }
+
+    // Nút chuyển ảnh trước đó
+    function prevModalImg() {
+      if (currentModalImages.length <= 1) return;
+      currentImgIndex = (currentImgIndex - 1 + currentModalImages.length) % currentModalImages.length;
+      renderModalThumbnails();
+    }
+
+    // Nút chuyển ảnh kế tiếp
+    function nextModalImg() {
+      if (currentModalImages.length <= 1) return;
+      currentImgIndex = (currentImgIndex + 1) % currentModalImages.length;
+      renderModalThumbnails();
+    }
+
+    // Xử lý bộ lọc sản phẩm với hiệu ứng xuất hiện lượn sóng
+    function filterProducts(category) {
+      const cards = document.querySelectorAll('.product-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => {
+        if(btn.dataset.category === category) {
+          btn.classList.add('bg-tet-red', 'text-white', 'shadow-sm');
+          btn.classList.remove('bg-white', 'text-stone-700', 'border');
+        } else {
+          btn.classList.remove('bg-tet-red', 'text-white', 'shadow-sm');
+          btn.classList.add('bg-white', 'text-stone-700', 'border');
+        }
+      });
+
+      let visibleCount = 0;
+      cards.forEach(card => {
+        if(category === 'all' || card.dataset.category === category) {
+          card.style.display = 'flex';
+          card.classList.remove('revealed');
+          const delay = (visibleCount % 4) * 80;
+          visibleCount++;
+          setTimeout(() => {
+            card.classList.add('revealed');
+          }, delay + 30);
+        } else {
+          card.style.display = 'none';
+          card.classList.remove('revealed');
+        }
+      });
+    }
+
+    // Hàm mở chi tiết Giỏ Quà May Mắn (Mã: BD1) - Bố cục 4 ảnh bên cạnh, 1 ảnh chính, tên nổi bật & thành phần dễ nhìn
+    function openModalBD1() {
+      currentModalImages = [
+        'images/bd1-may-man.jpg',
+        'images/bd1-detail-1.jpg',
+        'images/bd1-detail-2.jpg',
+        'images/bd1-detail-3.jpg'
+      ];
+      currentImgIndex = 0;
+
+      document.getElementById('modal-code-badge').innerText = 'Mã BD1';
+      document.getElementById('modal-code-badge').className = 'bg-amber-400 text-tet-darkred text-[11px] font-extrabold px-2.5 py-0.5 rounded shadow-sm';
+      document.getElementById('modal-title').innerText = 'GIỎ QUÀ MAY MẮN';
+      document.getElementById('modal-price-retail').innerText = '349.000đ';
+      document.getElementById('modal-price-wholesale').innerText = '329.000đ';
+
+      const ingredients = [
+        'Hộp Bánh Depipie hãng Richy',
+        'Hộp bánh Thiếc Cosy',
+        '2 lon nước ngọt',
+        'Hộp bánh D-Maxx',
+        'Hộp bánh Cosy',
+        'Hộp bánh quế Gooka hãng Bibica',
+        'Hộp bánh Marine hãng Orion',
+        'Hộp bánh chocopie',
+        'Hộp bánh Ahh Nabati',
+        'Túi Kẹo Mèo'
+      ];
+
+      const listContainer = document.getElementById('modal-ingredients-list');
+      listContainer.innerHTML = `
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5">
+          ${ingredients.map(item => `
+            <div class="flex items-center gap-2 text-stone-800">
+              <i class="fa-solid fa-check text-tet-red text-sm font-bold flex-shrink-0"></i>
+              <span class="font-medium text-xs sm:text-sm leading-snug">${item}</span>
+            </div>
+          `).join('')}
+        </div>
+      `;
+
+      renderModalThumbnails();
+      document.getElementById('product-modal').classList.remove('hidden');
+    }
+
+    // Hàm mở chi tiết Giỏ Quà Linh Dương Thưởng Cát (Mã: BD2)
+    function openModalBD2() {
+      currentModalImages = [
+        'images/bd2-linh-duong-thuong-cat.jpg',
+        'images/bd2-detail-2.jpg',
+        'images/bd2-detail-3.jpg',
+        'images/bd2-detail-1.jpg'
+      ];
+      currentImgIndex = 0;
+
+      document.getElementById('modal-code-badge').innerText = 'Mã BD2';
+      document.getElementById('modal-code-badge').className = 'bg-amber-400 text-tet-darkred text-[11px] font-extrabold px-2.5 py-0.5 rounded shadow-sm';
+      document.getElementById('modal-title').innerText = 'LINH DƯƠNG THƯỞNG CÁT';
+      document.getElementById('modal-price-retail').innerText = '399.000đ';
+      document.getElementById('modal-price-wholesale').innerText = '379.000đ';
+
+      const ingredients = [
+        'Hộp Bánh Mứt Goody Bibica',
+        'Hộp Xoài Sấy Dẻo',
+        'Hộp Bánh Quy Cookies',
+        '2 Hộp Yến Sào Khánh Hoà',
+        'Hộp Socola KK Golden'
+      ];
+
+      const listContainer = document.getElementById('modal-ingredients-list');
+      listContainer.innerHTML = `
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5">
+          ${ingredients.map(item => `
+            <div class="flex items-center gap-2 text-stone-800">
+              <i class="fa-solid fa-check text-tet-red text-sm font-bold flex-shrink-0"></i>
+              <span class="font-medium text-xs sm:text-sm leading-snug">${item}</span>
+            </div>
+          `).join('')}
+        </div>
+        <div class="mt-4 pt-3 border-t border-stone-200/80 text-xs text-stone-600 flex items-center gap-1.5 font-medium">
+          <i class="fa-solid fa-palette text-amber-600"></i>
+          <span>3 màu sắc: Vàng Hoàng Kim • Đỏ Chu Sa • Xanh Lam Ngọc (kèm túi giấy ép kim sang trọng)</span>
+        </div>
+      `;
+
+      renderModalThumbnails();
+      document.getElementById('product-modal').classList.remove('hidden');
+    }
+
+    // Hàm mở chi tiết Giỏ Quà Đại Cát Đại Lợi (Mã: BD3)
+    function openModalBD3() {
+      currentModalImages = ['images/bd3-dai-cat-dai-loi.jpg'];
+      currentImgIndex = 0;
+
+      document.getElementById('modal-code-badge').innerText = 'Mã BD3';
+      document.getElementById('modal-code-badge').className = 'bg-amber-400 text-tet-darkred text-[11px] font-extrabold px-2.5 py-0.5 rounded shadow-sm';
+      document.getElementById('modal-title').innerText = 'ĐẠI CÁT ĐẠI LỢI';
+      document.getElementById('modal-price-retail').innerText = '409.000đ';
+      document.getElementById('modal-price-wholesale').innerText = '389.000đ';
+
+      const ingredients = [
+        'Hộp bánh chống lưng Chocopie',
+        'Hộp bánh Danisa',
+        '2 Hộp bánh que Pocky',
+        'Hộp bánh AFC',
+        '2 Hộp bánh khoai tây Slide',
+        '2 Hộp bánh Marine',
+        'Hộp bánh Chocopie'
+      ];
+
+      const listContainer = document.getElementById('modal-ingredients-list');
+      listContainer.innerHTML = `
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5">
+          ${ingredients.map(item => `
+            <div class="flex items-center gap-2 text-stone-800">
+              <i class="fa-solid fa-check text-tet-red text-sm font-bold flex-shrink-0"></i>
+              <span class="font-medium text-xs sm:text-sm leading-snug">${item}</span>
+            </div>
+          `).join('')}
+        </div>
+      `;
+
+      renderModalThumbnails();
+      document.getElementById('product-modal').classList.remove('hidden');
+    }
+
+    // Hàm mở chi tiết Giỏ Quà Tinh Hoa Hội Tụ (Mã: BD4)
+    function openModalBD4() {
+      currentModalImages = [
+        'images/bd4-tinh-hoa-hoi-tu.jpg',
+        'images/bd4-detail-1.jpg',
+        'images/bd4-detail-2.jpg',
+        'images/bd4-detail-3.jpg'
+      ];
+      currentImgIndex = 0;
+
+      document.getElementById('modal-code-badge').innerText = 'Mã BD4';
+      document.getElementById('modal-code-badge').className = 'bg-amber-400 text-tet-darkred text-[11px] font-extrabold px-2.5 py-0.5 rounded shadow-sm';
+      document.getElementById('modal-title').innerText = 'TINH HOA HỘI TỤ';
+      document.getElementById('modal-price-retail').innerText = '559.000đ';
+      document.getElementById('modal-price-wholesale').innerText = '529.000đ';
+
+      const ingredients = [
+        'Hộp bánh Choco PN hãng Phạm Nguyên (chống lưng)',
+        'Hộp bánh Lu',
+        'Hộp Socola KK Golden',
+        'Hộp bánh Goute hãng Orion',
+        'Túi tiền tài lộc đựng kẹo',
+        'Hộp bánh bông lan kem dâu Solo hãng Phạm Nguyên',
+        'Hộp CF phố',
+        'Hộp Snack Khoai Tây',
+        'Hộp Táo Đỏ Organic',
+        '2 Hộp bánh que Ticky',
+        'Hộp bánh Chocopie',
+        'Hộp bánh xốp Thái',
+        '2 Hộp bánh Cosy (lót đế)'
+      ];
+
+      const listContainer = document.getElementById('modal-ingredients-list');
+      listContainer.innerHTML = `
+        <div class="mb-2.5 text-xs font-bold text-amber-900 bg-amber-50 px-2.5 py-1.5 rounded-lg border border-amber-200/70 flex items-center gap-1.5">
+          <span>🎁 Set Quà 15 món cao cấp đầy đặn:</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2">
+          ${ingredients.map(item => `
+            <div class="flex items-center gap-2 text-stone-800">
+              <i class="fa-solid fa-check text-tet-red text-sm font-bold flex-shrink-0"></i>
+              <span class="font-medium text-xs sm:text-sm leading-snug">${item}</span>
+            </div>
+          `).join('')}
+        </div>
+        <div class="mt-3.5 pt-2.5 border-t border-stone-200/80 text-xs text-stone-600 flex items-center gap-1.5 font-medium">
+          <i class="fa-solid fa-wand-magic-sparkles text-amber-600"></i>
+          <span>🌸 Kèm phụ kiện trang trí hoa trạng nguyên, thắt nơ & quạt giấy phong thủy</span>
+        </div>
+      `;
+
+      renderModalThumbnails();
+      document.getElementById('product-modal').classList.remove('hidden');
+    }
+
+    // ==================== DANH SÁCH MODAL GIỎ QUÀ SANG TRỌNG (ST1 - ST7) ====================
+
+    // Hàm mở chi tiết Giỏ Quà Mã Đáo Thành Công (Mã: ST1)
+    function openModalST1() {
+      currentModalImages = [
+        'images/st1-ma-dao-thanh-cong.jpg',
+        'images/st1-detail-1.jpg',
+        'images/st1-detail-2.jpg',
+        'images/st1-detail-3.jpg',
+        'images/st1-detail-4.jpg'
+      ];
+      currentImgIndex = 0;
+
+      document.getElementById('modal-code-badge').innerText = 'Mã ST1';
+      document.getElementById('modal-code-badge').className = 'bg-amber-400 text-tet-darkred text-[11px] font-extrabold px-2.5 py-0.5 rounded shadow-sm';
+      document.getElementById('modal-title').innerText = 'MÃ ĐÁO THÀNH CÔNG';
+      document.getElementById('modal-price-retail').innerText = '669.000đ';
+      document.getElementById('modal-price-wholesale').innerText = '649.000đ';
+
+      const ingredients = [
+        'Hộp Bánh Danisa thơm ngon giòn rụm',
+        'Hũ khô heo cháy tỏi đậm đà',
+        'Hộp táo đỏ bổ dưỡng',
+        'Chai rượu Moravia',
+        'Hộp trà chanh Nestea',
+        'Hộp Socola Faris'
+      ];
+
+      const listContainer = document.getElementById('modal-ingredients-list');
+      listContainer.innerHTML = `
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5">
+          ${ingredients.map(item => `
+            <div class="flex items-center gap-2 text-stone-800">
+              <i class="fa-solid fa-check text-tet-red text-sm font-bold flex-shrink-0"></i>
+              <span class="font-medium text-xs sm:text-sm leading-snug">${item}</span>
+            </div>
+          `).join('')}
+        </div>
+        <div class="mt-3.5 pt-2.5 border-t border-stone-200/80 text-xs text-stone-600 flex items-center gap-1.5 font-medium">
+          <i class="fa-solid fa-gift text-tet-red"></i>
+          <span>🌸 Kèm phụ kiện trang trí & túi xách 💕</span>
+        </div>
+      `;
+
+      renderModalThumbnails();
+      document.getElementById('product-modal').classList.remove('hidden');
+    }
+
+    // Hàm mở chi tiết Giỏ Quà Bách Niên Thịnh Vượng (Mã: ST2)
+    function openModalST2() {
+      currentModalImages = [
+        'images/st2-bach-nien-thinh-vuong.jpg',
+        'images/st2-detail-1.jpg',
+        'images/st2-detail-2.jpg',
+        'images/st2-detail-3.jpg',
+        'images/st2-detail-4.jpg'
+      ];
+      currentImgIndex = 0;
+
+      document.getElementById('modal-code-badge').innerText = 'Mã ST2';
+      document.getElementById('modal-code-badge').className = 'bg-amber-400 text-tet-darkred text-[11px] font-extrabold px-2.5 py-0.5 rounded shadow-sm';
+      document.getElementById('modal-title').innerText = 'BÁCH NIÊN THỊNH VƯỢNG';
+      document.getElementById('modal-price-retail').innerText = '689.000đ';
+      document.getElementById('modal-price-wholesale').innerText = '669.000đ';
+
+      const ingredients = [
+        'Hộp bánh nhân mứt nho hãng Bibica',
+        'Chai Rượu Moravia',
+        'Hộp bánh ChocoPN',
+        'Hộp bánh thiếc hãng Richy',
+        'Hộp Socola hoa mai Golden',
+        '3 Hộp Yến Sào Khánh Hoà',
+        'Hộp bánh AFC',
+        'Hộp CF Maison',
+        'Hộp bánh Oreo Socolapie',
+        'Hộp bánh Marine Boy',
+        'Hộp bánh quế Oreo nhân socola',
+        'Hộp bánh Solite cuộn kem'
+      ];
+
+      const listContainer = document.getElementById('modal-ingredients-list');
+      listContainer.innerHTML = `
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5">
+          ${ingredients.map(item => `
+            <div class="flex items-center gap-2 text-stone-800">
+              <i class="fa-solid fa-check text-tet-red text-sm font-bold flex-shrink-0"></i>
+              <span class="font-medium text-xs sm:text-sm leading-snug">${item}</span>
+            </div>
+          `).join('')}
+        </div>
+        <div class="mt-3.5 pt-2.5 border-t border-stone-200/80 text-xs text-stone-600 flex items-center gap-1.5 font-medium">
+          <i class="fa-solid fa-wand-magic-sparkles text-amber-600"></i>
+          <span>🌸 Kèm khay thuyền Tết Sum Vầy, quạt giấy phong thủy & hoa lụa cao cấp</span>
+        </div>
+      `;
+
+      renderModalThumbnails();
+      document.getElementById('product-modal').classList.remove('hidden');
+    }
+
+    // Hàm mở chi tiết Giỏ Quà Hoàng Kim Phú Quý (Mã: ST3)
+    function openModalST3() {
+      currentModalImages = [
+        'images/st3-hoang-kim-phu-quy.jpg',
+        'images/st3-detail-1.jpg',
+        'images/st3-detail-2.jpg',
+        'images/st3-detail-3.jpg'
+      ];
+      currentImgIndex = 0;
+
+      document.getElementById('modal-code-badge').innerText = 'Mã ST3';
+      document.getElementById('modal-code-badge').className = 'bg-amber-400 text-tet-darkred text-[11px] font-extrabold px-2.5 py-0.5 rounded shadow-sm';
+      document.getElementById('modal-title').innerText = 'HOÀNG KIM PHÚ QUÝ';
+      document.getElementById('modal-price-retail').innerText = '699.000đ';
+      document.getElementById('modal-price-wholesale').innerText = '679.000đ';
+
+      const ingredients = [
+        'Hộp bánh Kenju',
+        'Hộp Socola KK Golden',
+        'Hộp Trà Cozy',
+        'Hộp Bánh Mứt Goody',
+        'Chai Rượu Moravia',
+        'Hộp Bánh Cosy',
+        'Hộp Yến Sào Khánh Hoà',
+        'Hộp CF Phố',
+        'Hộp Xoài Sấy Dẻo',
+        '2 Hộp Bánh Quy Sữa D-Maxx (chống đế)'
+      ];
+
+      const listContainer = document.getElementById('modal-ingredients-list');
+      listContainer.innerHTML = `
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5">
+          ${ingredients.map(item => `
+            <div class="flex items-center gap-2 text-stone-800">
+              <i class="fa-solid fa-check text-tet-red text-sm font-bold flex-shrink-0"></i>
+              <span class="font-medium text-xs sm:text-sm leading-snug">${item}</span>
+            </div>
+          `).join('')}
+        </div>
+        <div class="mt-3.5 pt-2.5 border-t border-stone-200/80 text-xs text-stone-600 flex items-center gap-1.5 font-medium">
+          <i class="fa-solid fa-wand-magic-sparkles text-amber-600"></i>
+          <span>🌸 Kèm khay thuyền Tết Phú Quý, quạt giấy phong thủy & hoa lụa cao cấp</span>
+        </div>
+      `;
+
+      renderModalThumbnails();
+      document.getElementById('product-modal').classList.remove('hidden');
+    }
+
+    // Hàm mở chi tiết Giỏ Quà An Khang Thịnh Vượng (Mã: ST4)
+    function openModalST4() {
+      currentModalImages = [
+        'images/st4-an-khang-thinh-vuong.jpg',
+        'images/st4-detail-1.jpg',
+        'images/st4-detail-2.jpg',
+        'images/st4-detail-3.jpg'
+      ];
+      currentImgIndex = 0;
+
+      document.getElementById('modal-code-badge').innerText = 'Mã ST4';
+      document.getElementById('modal-code-badge').className = 'bg-amber-400 text-tet-darkred text-[11px] font-extrabold px-2.5 py-0.5 rounded shadow-sm';
+      document.getElementById('modal-title').innerText = 'AN KHANG THỊNH VƯỢNG';
+      document.getElementById('modal-price-retail').innerText = '699.000đ';
+      document.getElementById('modal-price-wholesale').innerText = '679.000đ';
+
+      const ingredients = [
+        'Hộp bánh Solite',
+        'Hộp Socola KK Golden',
+        'Hộp Trà Cozy',
+        'Hộp Bánh Mứt Goody',
+        'Chai Rượu Moravia',
+        'Hộp Bánh Cosy',
+        'Hộp Yến Sào Khánh Hoà',
+        'Hộp CF Maison',
+        'Hộp Xoài Sấy Dẻo',
+        '2 Hộp Bánh Solite (chống đế)'
+      ];
+
+      const listContainer = document.getElementById('modal-ingredients-list');
+      listContainer.innerHTML = `
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5">
+          ${ingredients.map(item => `
+            <div class="flex items-center gap-2 text-stone-800">
+              <i class="fa-solid fa-check text-tet-red text-sm font-bold flex-shrink-0"></i>
+              <span class="font-medium text-xs sm:text-sm leading-snug">${item}</span>
+            </div>
+          `).join('')}
+        </div>
+        <div class="mt-3.5 pt-2.5 border-t border-stone-200/80 text-xs text-stone-600 flex items-center gap-1.5 font-medium">
+          <i class="fa-solid fa-wand-magic-sparkles text-amber-600"></i>
+          <span>🌸 Kèm khay thuyền Xuân Như Ý, quạt giấy phong thủy & hoa lụa cao cấp</span>
+        </div>
+      `;
+
+      renderModalThumbnails();
+      document.getElementById('product-modal').classList.remove('hidden');
+    }
+
+    // Hàm mở chi tiết Giỏ Quà Gói Trọn Vị Xuân (Mã: ST5)
+    function openModalST5() {
+      currentModalImages = [
+        'images/st5-goi-tron-vi-xuan.jpg',
+        'images/st5-detail-1.jpg',
+        'images/st5-detail-2.jpg',
+        'images/st5-detail-3.jpg'
+      ];
+      currentImgIndex = 0;
+
+      document.getElementById('modal-code-badge').innerText = 'Mã ST5';
+      document.getElementById('modal-code-badge').className = 'bg-amber-400 text-tet-darkred text-[11px] font-extrabold px-2.5 py-0.5 rounded shadow-sm';
+      document.getElementById('modal-title').innerText = 'GÓI TRỌN VỊ XUÂN';
+      document.getElementById('modal-price-retail').innerText = '699.000đ';
+      document.getElementById('modal-price-wholesale').innerText = '679.000đ';
+
+      const ingredients = [
+        'Hộp bánh nhân dâu Creamy hãng Bibica',
+        'Chai Rượu Moravia',
+        'Hộp bánh ChocoPN',
+        'Hộp bánh thiếc Goody',
+        'Hộp Socola hoa mai Golden',
+        '3 Hộp Tổ Yến',
+        'Hộp bánh Hura',
+        'Hộp CF Phố',
+        'Hộp bánh Chocolat',
+        'Hộp bánh Marine Boy',
+        'Hộp bánh D-Maxx',
+        'Hộp bánh quế Gooka hãng Bibica'
+      ];
+
+      const listContainer = document.getElementById('modal-ingredients-list');
+      listContainer.innerHTML = `
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5">
+          ${ingredients.map(item => `
+            <div class="flex items-center gap-2 text-stone-800">
+              <i class="fa-solid fa-check text-tet-red text-sm font-bold flex-shrink-0"></i>
+              <span class="font-medium text-xs sm:text-sm leading-snug">${item}</span>
+            </div>
+          `).join('')}
+        </div>
+        <div class="mt-3.5 pt-2.5 border-t border-stone-200/80 text-xs text-stone-600 flex items-center gap-1.5 font-medium">
+          <i class="fa-solid fa-wand-magic-sparkles text-amber-600"></i>
+          <span>🌸 Kèm khay thuyền Tết Phú Quý & hoa lụa trạng nguyên cao cấp</span>
+        </div>
+      `;
+
+      renderModalThumbnails();
+      document.getElementById('product-modal').classList.remove('hidden');
+    }
+
+    // Hàm mở chi tiết Giỏ Quà Sắc Xuân Rạng Rỡ (Mã: ST6)
+    function openModalST6() {
+      currentModalImages = [
+        'images/st6-sac-xuan-rang-ro.jpg',
+        'images/st6-detail-1.jpg',
+        'images/st6-detail-2.jpg',
+        'images/st6-detail-3.jpg',
+        'images/st6-detail-4.jpg'
+      ];
+      currentImgIndex = 0;
+
+      document.getElementById('modal-code-badge').innerText = 'Mã ST6';
+      document.getElementById('modal-code-badge').className = 'bg-amber-400 text-tet-darkred text-[11px] font-extrabold px-2.5 py-0.5 rounded shadow-sm';
+      document.getElementById('modal-title').innerText = 'SẮC XUÂN RẠNG RỠ';
+      document.getElementById('modal-price-retail').innerText = '719.000đ';
+      document.getElementById('modal-price-wholesale').innerText = '699.000đ';
+
+      const ingredients = [
+        'Hộp bánh nhân mứt nho hãng Bibica',
+        'Chai Rượu Moravia',
+        'Hộp bánh ChocoPN',
+        'Hộp bánh thiếc hãng Richy',
+        'Hộp Socola hoa mai Golden',
+        '3 Hộp Yến Sào Khánh Hoà',
+        'Hộp bánh AFC',
+        'Hộp CF Maison',
+        'Hộp bánh Oreo Socolapie',
+        'Hộp bánh Marine Boy',
+        'Hộp bánh quế Oreo nhân socola',
+        'Hộp bánh Solite cuộn kem'
+      ];
+
+      const listContainer = document.getElementById('modal-ingredients-list');
+      listContainer.innerHTML = `
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5">
+          ${ingredients.map(item => `
+            <div class="flex items-center gap-2 text-stone-800">
+              <i class="fa-solid fa-check text-tet-red text-sm font-bold flex-shrink-0"></i>
+              <span class="font-medium text-xs sm:text-sm leading-snug">${item}</span>
+            </div>
+          `).join('')}
+        </div>
+        <div class="mt-3.5 pt-2.5 border-t border-stone-200/80 text-xs text-stone-600 flex items-center gap-1.5 font-medium">
+          <i class="fa-solid fa-wand-magic-sparkles text-amber-600"></i>
+          <span>🌸 Kèm khay thuyền Tết Sum Vầy, cành sung tài lộc & hoa lụa cao cấp</span>
+        </div>
+      `;
+
+      renderModalThumbnails();
+      document.getElementById('product-modal').classList.remove('hidden');
+    }
+
+    // Hàm mở chi tiết Giỏ Quà Phúc Lộc Thọ (Mã: ST7)
+    function openModalST7() {
+      currentModalImages = [
+        'images/st7-phuc-loc-tho.jpg',
+        'images/st7-detail-1.jpg',
+        'images/st7-detail-2.jpg',
+        'images/st7-detail-3.jpg'
+      ];
+      currentImgIndex = 0;
+
+      document.getElementById('modal-code-badge').innerText = 'Mã ST7';
+      document.getElementById('modal-code-badge').className = 'bg-amber-400 text-tet-darkred text-[11px] font-extrabold px-2.5 py-0.5 rounded shadow-sm';
+      document.getElementById('modal-title').innerText = 'PHÚC LỘC THỌ';
+      document.getElementById('modal-price-retail').innerText = '729.000đ';
+      document.getElementById('modal-price-wholesale').innerText = '699.000đ';
+
+      const ingredients = [
+        'Hộp bánh nhân mứt xoài hãng Bibica',
+        'Chai Rượu Moravia',
+        'Hộp bánh ChocoPN',
+        'Hộp bánh thiếc Goody',
+        'Hộp Socola hoa mai Golden',
+        '3 Hộp Tổ Yến',
+        'Hộp bánh AFC',
+        'Hộp CF Ông Bầu',
+        'Hộp bánh Chocolat',
+        'Hộp bánh Marine Boy',
+        'Hộp bánh Solite',
+        'Hộp bánh quế Gooka hãng Bibica'
+      ];
+
+      const listContainer = document.getElementById('modal-ingredients-list');
+      listContainer.innerHTML = `
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5">
+          ${ingredients.map(item => `
+            <div class="flex items-center gap-2 text-stone-800">
+              <i class="fa-solid fa-check text-tet-red text-sm font-bold flex-shrink-0"></i>
+              <span class="font-medium text-xs sm:text-sm leading-snug">${item}</span>
+            </div>
+          `).join('')}
+        </div>
+        <div class="mt-3.5 pt-2.5 border-t border-stone-200/80 text-xs text-stone-600 flex items-center gap-1.5 font-medium">
+          <i class="fa-solid fa-wand-magic-sparkles text-amber-600"></i>
+          <span>🌸 Kèm khay thuyền Xuân Như Ý, cành sung tài lộc & hoa lụa vàng cao cấp</span>
+        </div>
+      `;
+
+      renderModalThumbnails();
+      document.getElementById('product-modal').classList.remove('hidden');
+    }
+
+    // Hàm mở chi tiết Giỏ Quà Bách Niên Phú Quý (Mã: CC1)
+    function openModalCC1() {
+      currentModalImages = [
+        'images/cc1-bach-nien-phu-quy.jpg',
+        'images/cc1-detail-1.jpg',
+        'images/cc1-detail-2.jpg',
+        'images/cc1-detail-3.jpg',
+        'images/cc1-detail-4.jpg',
+        'images/cc1-detail-5.jpg',
+        'images/cc1-detail-6.jpg'
+      ];
+      currentImgIndex = 0;
+
+      document.getElementById('modal-code-badge').innerText = 'Mã CC1';
+      document.getElementById('modal-code-badge').className = 'bg-amber-400 text-tet-darkred text-[11px] font-extrabold px-2.5 py-0.5 rounded shadow-sm';
+      document.getElementById('modal-title').innerText = 'BÁCH NIÊN PHÚ QUÝ';
+      document.getElementById('modal-price-retail').innerText = '969.000đ';
+      document.getElementById('modal-price-wholesale').innerText = '939.000đ';
+
+      const ingredients = [
+        'Hộp bánh quy thiếc hãng Richy',
+        'Hộp Socola Faris 2 tầng 16 viên',
+        'Hũ hạt điều',
+        'Hũ khô heo cháy tỏi',
+        'Hộp CF Maison',
+        'Chai rượu Moravia',
+        'Hộp nho sấy'
+      ];
+
+      const listContainer = document.getElementById('modal-ingredients-list');
+      listContainer.innerHTML = `
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5">
+          ${ingredients.map(item => `
+            <div class="flex items-center gap-2 text-stone-800">
+              <i class="fa-solid fa-check text-tet-red text-sm font-bold flex-shrink-0"></i>
+              <span class="font-medium text-xs sm:text-sm leading-snug">${item}</span>
+            </div>
+          `).join('')}
+        </div>
+        <div class="mt-3.5 pt-2.5 border-t border-stone-200/80 text-xs text-stone-600 flex items-center gap-1.5 font-medium">
+          <i class="fa-solid fa-wand-magic-sparkles text-amber-600"></i>
+          <span>🌸 Kèm phụ kiện trang trí & túi xách 💕 (Hộp vali đôi dập hoa nổi, khóa đồng & linh vật Đinh Mùi 2027)</span>
+        </div>
+      `;
+
+      renderModalThumbnails();
+      document.getElementById('product-modal').classList.remove('hidden');
+    }
+
+    // Hàm mở chi tiết Giỏ Quà Thịnh Vượng Cát Tường (Mã: CC2)
+    function openModalCC2() {
+      currentModalImages = [
+        'images/cc2-thinh-vuong-cat-tuong.jpg',
+        'images/cc2-detail-1.jpg',
+        'images/cc2-detail-2.jpg',
+        'images/cc2-detail-3.jpg',
+        'images/cc2-detail-4.jpg',
+        'images/cc2-detail-5.jpg',
+        'images/cc2-detail-6.jpg',
+        'images/cc2-detail-7.jpg',
+        'images/cc2-detail-8.jpg'
+      ];
+      currentImgIndex = 0;
+
+      document.getElementById('modal-code-badge').innerText = 'Mã CC2';
+      document.getElementById('modal-code-badge').className = 'bg-amber-400 text-tet-darkred text-[11px] font-extrabold px-2.5 py-0.5 rounded shadow-sm';
+      document.getElementById('modal-title').innerText = 'THỊNH VƯỢNG CÁT TƯỜNG';
+      document.getElementById('modal-price-retail').innerText = '989.000đ';
+      document.getElementById('modal-price-wholesale').innerText = '969.000đ';
+
+      const ingredients = [
+        'Hộp bánh quy thiếc hãng Richy',
+        'Hộp Socola Faris 2 tầng 16 viên',
+        'Hũ táo đỏ',
+        'Hũ khô gà lá chanh',
+        'Hộp CF Legend Trung Nguyên',
+        'Chai rượu Montero',
+        'Hộp nho sấy'
+      ];
+
+      const listContainer = document.getElementById('modal-ingredients-list');
+      listContainer.innerHTML = `
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5">
+          ${ingredients.map(item => `
+            <div class="flex items-center gap-2 text-stone-800">
+              <i class="fa-solid fa-check text-tet-red text-sm font-bold flex-shrink-0"></i>
+              <span class="font-medium text-xs sm:text-sm leading-snug">${item}</span>
+            </div>
+          `).join('')}
+        </div>
+        <div class="mt-3.5 pt-2.5 border-t border-stone-200/80 text-xs text-stone-600 flex items-center gap-1.5 font-medium">
+          <i class="fa-solid fa-wand-magic-sparkles text-amber-600"></i>
+          <span>🌸 Kèm phụ kiện trang trí & túi xách 💕 (Hộp vali xanh hoàng gia dập hoa nổi, quai xách mạ vàng & linh vật Đinh Mùi 2027)</span>
+        </div>
+      `;
+
+      renderModalThumbnails();
+      document.getElementById('product-modal').classList.remove('hidden');
+    }
+
+    // Hàm mở chi tiết Giỏ Quà Vạn Sự Như Ý (Mã: CC3)
+    function openModalCC3() {
+      currentModalImages = [
+        'images/cc3-van-su-nhu-y.jpg',
+        'images/cc3-detail-1.jpg',
+        'images/cc3-detail-2.jpg',
+        'images/cc3-detail-3.jpg',
+        'images/cc3-detail-4.jpg',
+        'images/cc3-detail-5.jpg',
+        'images/cc3-detail-6.jpg',
+        'images/cc3-detail-7.jpg'
+      ];
+      currentImgIndex = 0;
+
+      document.getElementById('modal-code-badge').innerText = 'Mã CC3';
+      document.getElementById('modal-code-badge').className = 'bg-amber-400 text-tet-darkred text-[11px] font-extrabold px-2.5 py-0.5 rounded shadow-sm';
+      document.getElementById('modal-title').innerText = 'VẠN SỰ NHƯ Ý';
+      document.getElementById('modal-price-retail').innerText = '849.000đ';
+      document.getElementById('modal-price-wholesale').innerText = '809.000đ';
+
+      const ingredients = [
+        'Hộp bánh thiếc Merry hãng Richy',
+        'Hộp Socola Quạt Golden',
+        'Hộp bánh Quế Roll’s của Nabati',
+        'Hộp bánh thiếc Richy hoa mai mạ vàng',
+        'Hộp hạt mix hạnh nhân, hạt sen, hạt điều, đậu hà lan',
+        'Hộp bánh xốp nhân phô mai Cal Cheese',
+        'Hộp bánh Goute hãng Orion',
+        'Hộp khô gà lá chanh',
+        'Hộp bánh Custas kem trứng',
+        '3 Hũ Yến Xào Khánh Hoà cao cấp',
+        '2 Hộp bánh Nabati (chống đế)'
+      ];
+
+      const listContainer = document.getElementById('modal-ingredients-list');
+      listContainer.innerHTML = `
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5">
+          ${ingredients.map(item => `
+            <div class="flex items-center gap-2 text-stone-800">
+              <i class="fa-solid fa-check text-tet-red text-sm font-bold flex-shrink-0"></i>
+              <span class="font-medium text-xs sm:text-sm leading-snug">${item}</span>
+            </div>
+          `).join('')}
+        </div>
+        <div class="mt-3.5 pt-2.5 border-t border-stone-200/80 text-xs text-stone-600 flex items-center gap-1.5 font-medium">
+          <i class="fa-solid fa-wand-magic-sparkles text-amber-600"></i>
+          <span>🌸 Kèm khay thuyền Xuân Như Ý, hoa lụa vàng cao cấp & phụ kiện trang trí Tết 💛</span>
+        </div>
+      `;
+
+      renderModalThumbnails();
+      document.getElementById('product-modal').classList.remove('hidden');
+    }
+
+    // Hàm modal chung cho các sản phẩm khác trên trang
+    function openModal(title, price, imgs, descHtml) {
+      if (Array.isArray(imgs)) {
+        currentModalImages = imgs;
+      } else if (typeof imgs === 'string') {
+        currentModalImages = imgs.split(',').map(s => s.trim());
+      } else {
+        currentModalImages = [];
+      }
+      currentImgIndex = 0;
+
+      document.getElementById('modal-code-badge').innerText = 'Quà Tết';
+      document.getElementById('modal-code-badge').className = 'bg-stone-800 text-amber-300 text-[11px] font-bold px-2 py-0.5 rounded';
+      document.getElementById('modal-title').innerText = title;
+      document.getElementById('modal-price-retail').innerText = price;
+      document.getElementById('modal-price-wholesale').innerText = 'Liên hệ';
+
+      const listContainer = document.getElementById('modal-ingredients-list');
+      listContainer.innerHTML = `
+        <div class="p-3 bg-white rounded-xl border border-stone-200 text-xs text-stone-600 leading-relaxed">
+          ${descHtml}
+        </div>
+      `;
+
+      renderModalThumbnails();
+      document.getElementById('product-modal').classList.remove('hidden');
+    }
+
+    // Cuộn tới giỏ quà cụ thể từ menu dropdown và tạo hiệu ứng nhấp nháy nổi bật
+    function goToProduct(id) {
+      const category = id.startsWith('cc') ? 'cao-cap' : (id.startsWith('st') ? '600k-1200k' : (id.startsWith('bd') ? 'duoi-600k' : 'all'));
+      filterProducts(category);
+      setTimeout(() => {
+        const el = document.getElementById('product-' + id);
+        if (el) {
+          el.classList.add('revealed');
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          el.classList.add('ring-4', 'ring-amber-400', 'shadow-2xl');
+          setTimeout(() => {
+            el.classList.remove('ring-4', 'ring-amber-400', 'shadow-2xl');
+          }, 1800);
+        }
+      }, 150);
+    }
+
+    function closeModal() {
+      document.getElementById('product-modal').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
