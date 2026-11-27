@@ -306,16 +306,24 @@
       <!-- Khung Carousel Banner -->
       <div id="hero-carousel" class="relative group rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-amber-400/40 bg-[#42040B] select-none">
         
-        <!-- Wrapper các Slide: Mobile dùng aspect-square / max-h-[50vh] để ảnh bìa to rõ ràng, Desktop dùng tỉ lệ ngang cân đối -->
-        <div class="relative w-full aspect-square sm:aspect-[16/8] lg:aspect-[1916/821] max-h-[52vh] sm:max-h-none">
-          <!-- Slide 1: Banner Giỏ Quà Tết Kiều Trang (Hình gốc 'bìaa.png') -->
+        <!-- Wrapper các Slide: Mobile dùng aspect-square / max-h-[52vh] cho ảnh bìa dọc to nét ('bìaa.png' & 'bìa ab.png'), Laptop/Desktop dùng tỉ lệ ngang nguyên bản 1916/821 ('bìa a.png' & 'bìa 2.png') -->
+        <div class="relative w-full aspect-square sm:aspect-[1916/821] max-h-[52vh] sm:max-h-none">
+          <!-- Slide 1: Banner Giỏ Quà Tết Kiều Trang (Laptop: bìa a.png | Mobile: bìaa.png) -->
           <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 z-10" data-slide="0">
-            <img src="images/banner-1.png?v=5" alt="Giỏ Quà Tết Kiều Trang 2027" class="w-full h-full object-cover">
+            <picture class="w-full h-full block">
+              <source media="(max-width: 639px)" srcset="images/banner-mobile-1.png?v=6">
+              <source media="(min-width: 640px)" srcset="images/banner-1.png?v=6">
+              <img src="images/banner-1.png?v=6" alt="Giỏ Quà Tết Kiều Trang 2027" class="w-full h-full object-cover">
+            </picture>
           </div>
           
-          <!-- Slide 2: Banner Vì sao nên chọn (Hình gốc 'bìa ab.png') -->
+          <!-- Slide 2: Banner Vì sao nên chọn (Laptop: bìa 2.png | Mobile: bìa ab.png) -->
           <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0 pointer-events-none" data-slide="1">
-            <img src="images/banner-2.png?v=5" alt="Giỏ Quà Tết Kiều Trang 2027" class="w-full h-full object-cover">
+            <picture class="w-full h-full block">
+              <source media="(max-width: 639px)" srcset="images/banner-mobile-2.png?v=6">
+              <source media="(min-width: 640px)" srcset="images/banner-2.png?v=6">
+              <img src="images/banner-2.png?v=6" alt="Vì sao nên chọn Giỏ Quà Tết Kiều Trang" class="w-full h-full object-cover">
+            </picture>
           </div>
         </div>
 
