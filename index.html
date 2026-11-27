@@ -292,23 +292,23 @@
     </div>
   </nav>
 
-  <!-- HERO BANNER CAROUSEL (ẢNH BÌA SLIDER CHUYÊN NGHIỆP) -->
-  <header class="relative bg-gradient-to-b from-[#5C0610] via-[#8E0D1A] to-[#FBF9F5] pt-3 sm:pt-6 pb-6 sm:pb-8">
-    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+  <!-- HERO BANNER CAROUSEL (ẢNH BÌA SLIDER CHUYÊN NGHIỆP - TỰ ĐỔI MỖI 5 GIÂY) -->
+  <header class="relative bg-gradient-to-b from-[#5C0610] via-[#8E0D1A] to-[#FBF9F5] pt-2 sm:pt-6 pb-2 sm:pb-6">
+    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
       
       <!-- Khung Carousel Banner -->
       <div id="hero-carousel" class="relative group rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-amber-400/40 bg-[#42040B] select-none">
         
-        <!-- Wrapper các Slide (Tỉ lệ chuẩn 1916x821 nguyên bản gốc siêu nét 2.5MB) -->
-        <div class="relative w-full aspect-[1916/821]">
-          <!-- Slide 1: Banner Giỏ Quà Tết Kiều Trang (Hình gốc 'bìa a.png') -->
+        <!-- Wrapper các Slide: Mobile dùng aspect-square / max-h-[50vh] để ảnh bìa to rõ ràng, Desktop dùng tỉ lệ ngang cân đối -->
+        <div class="relative w-full aspect-square sm:aspect-[16/8] lg:aspect-[1916/821] max-h-[52vh] sm:max-h-none">
+          <!-- Slide 1: Banner Giỏ Quà Tết Kiều Trang (Hình gốc 'bìaa.png') -->
           <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 z-10" data-slide="0">
-            <img src="images/banner-1.png?v=3" alt="Giỏ Quà Tết Kiều Trang 2027" class="w-full h-full object-cover">
+            <img src="images/banner-1.png?v=5" alt="Giỏ Quà Tết Kiều Trang 2027" class="w-full h-full object-cover">
           </div>
           
-          <!-- Slide 2: Banner Vì sao nên chọn (Hình gốc 'bìa 2.png') -->
+          <!-- Slide 2: Banner Vì sao nên chọn (Hình gốc 'bìa ab.png') -->
           <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0 pointer-events-none" data-slide="1">
-            <img src="images/banner-2.png?v=3" alt="Vì sao nên chọn Giỏ Quà Tết Kiều Trang" class="w-full h-full object-cover">
+            <img src="images/banner-2.png?v=5" alt="Giỏ Quà Tết Kiều Trang 2027" class="w-full h-full object-cover">
           </div>
         </div>
 
@@ -331,35 +331,35 @@
     </div>
   </header>
 
-  <!-- BỘ LỌC VÀ DANH MỤC SẢN PHẨM -->
-  <section id="san-pham" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- BỘ LỌC VÀ DANH MỤC SẢN PHẨM (TỐI ƯU KHOẢNG CÁCH GỌN GÀNG, LƯỚT 1 NHỊP LÀ THẤY NGAY GIỎ QUÀ) -->
+  <section id="san-pham" class="pt-2 sm:pt-6 pb-12 sm:pb-20 max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
     <!-- KHỐI GIỚI THIỆU Ý NGHĨA GIỎ QUÀ TẾT (FONT MỀM MẠI, CHỮ OMBRE ĐỎ VÀNG SANG TRỌNG) -->
-    <div id="intro-reveal-box" class="text-center max-w-4xl mx-auto mb-10 overflow-hidden px-3 sm:px-6 pt-2">
+    <div id="intro-reveal-box" class="text-center max-w-4xl mx-auto mb-3 sm:mb-6 overflow-hidden px-2 sm:px-6 pt-1">
       <div class="intro-slide-reveal">
-        <p class="font-cormorant italic text-xl sm:text-2xl md:text-[28px] font-medium leading-relaxed max-w-3xl mx-auto text-ombre-desc tracking-wide">
+        <p class="font-cormorant italic text-lg sm:text-2xl md:text-[28px] font-medium leading-relaxed max-w-3xl mx-auto text-ombre-desc tracking-wide">
           “Với thiết kế tinh tế, giỏ quà vừa là điểm nhấn trang trí rực rỡ cho không gian ngày xuân thêm ấm cúng, vừa là món quà biếu đầy ý nghĩa thay bạn gửi trao lời chúc sung túc, bình an tới những người thân yêu.”
         </p>
       </div>
 
-      <!-- BỘ LỌC PHÂN KHÚC GIÁ -->
-      <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mt-8">
-        <button onclick="filterProducts('all')" class="filter-btn active px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition bg-tet-red text-white shadow-sm" data-category="all">
+      <!-- BỘ LỌC PHÂN KHÚC GIÁ (GỌN GÀNG SÁT NGAY DƯỚI DÒNG CHỮ) -->
+      <div class="flex flex-wrap items-center justify-center gap-1.5 sm:gap-3 mt-2.5 sm:mt-5">
+        <button onclick="filterProducts('all')" class="filter-btn active px-3.5 sm:px-5 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition bg-tet-red text-white shadow-sm" data-category="all">
           Tất Cả Mẫu
         </button>
-        <button onclick="filterProducts('duoi-600k')" class="filter-btn px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition bg-white text-stone-700 hover:bg-stone-100 border border-stone-200" data-category="duoi-600k">
+        <button onclick="filterProducts('duoi-600k')" class="filter-btn px-3.5 sm:px-5 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition bg-white text-stone-700 hover:bg-stone-100 border border-stone-200" data-category="duoi-600k">
           <span class="hidden sm:inline">Giỏ Quà </span>Bình Dân
         </button>
-        <button onclick="filterProducts('600k-1200k')" class="filter-btn px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition bg-white text-stone-700 hover:bg-stone-100 border border-stone-200" data-category="600k-1200k">
+        <button onclick="filterProducts('600k-1200k')" class="filter-btn px-3.5 sm:px-5 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition bg-white text-stone-700 hover:bg-stone-100 border border-stone-200" data-category="600k-1200k">
           <span class="hidden sm:inline">Giỏ Quà </span>Sang Trọng
         </button>
-        <button onclick="filterProducts('cao-cap')" class="filter-btn px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition bg-white text-stone-700 hover:bg-stone-100 border border-stone-200" data-category="cao-cap">
+        <button onclick="filterProducts('cao-cap')" class="filter-btn px-3.5 sm:px-5 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition bg-white text-stone-700 hover:bg-stone-100 border border-stone-200" data-category="cao-cap">
           <span class="hidden sm:inline">Giỏ Quà </span>Cao Cấp
         </button>
       </div>
     </div>
 
     <!-- DANH SÁCH GIỎ QUÀ GRID (TRÌNH BÀY GỌN GÀNG, CHUẨN CATALOGUE) -->
-    <div id="product-grid" class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+    <div id="product-grid" class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
 
       <!-- SP 1: GIỎ QUÀ MAY MẮN (MÃ BD1) -->
       <div id="product-bd1" onclick="openModalBD1()" class="product-card bg-white rounded-2xl overflow-hidden border border-stone-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" data-category="duoi-600k">
@@ -1034,7 +1034,7 @@
     </div>
   </div>
   <script>
-    // === XỬ LÝ HERO BANNER SLIDER (ẢNH BÌA) TỰ ĐỘNG CHUYỂN MỖI 3 GIÂY ===
+    // === XỬ LÝ HERO BANNER SLIDER (ẢNH BÌA) TỰ ĐỘNG CHUYỂN MỖI 5 GIÂY ===
     let currentHeroSlide = 0;
     let heroTimer = null;
 
@@ -1087,14 +1087,14 @@
       if (heroTimer) clearInterval(heroTimer);
       heroTimer = setInterval(() => {
         showHeroSlide(currentHeroSlide + 1);
-      }, 3000); // Tự động chuyển hình đúng sau 3 giây
+      }, 5000); // Tự động chuyển hình đúng sau 5 giây
     }
 
     function resetHeroTimer() {
       startHeroTimer();
     }
 
-    // Khởi động đồng hồ đếm 3s ngay lập tức (không dừng khi chuột lướt qua để luôn tự động đổi hình)
+    // Khởi động đồng hồ đếm 5s ngay lập tức
     startHeroTimer();
 
     window.addEventListener('load', () => {
