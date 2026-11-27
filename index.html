@@ -183,10 +183,10 @@
                 </div>
               </a>
               <a href="#product-bd5" onclick="goToProduct('bd5')" class="flex items-center gap-3 px-4 py-3 hover:bg-red-50 hover:text-tet-red transition group/item">
-                <img src="images/bd5-cat-tuong.jpg" class="w-10 h-10 rounded-lg object-cover border border-stone-200 flex-shrink-0 group-hover/item:border-tet-red">
+                <img src="images/bd5-cat-tuong.jpg?v=bd5" class="w-10 h-10 rounded-lg object-cover border border-stone-200 flex-shrink-0 group-hover/item:border-tet-red">
                 <div>
-                  <div class="font-bold text-xs text-stone-900 group-hover/item:text-tet-red">TẾT CÁT TƯỜNG (SD5)</div>
-                  <div class="text-[11px] text-tet-red font-semibold mt-0.5">589.000đ <span class="text-stone-400 font-normal">| Sỉ 559K</span></div>
+                  <div class="font-bold text-xs text-stone-900 group-hover/item:text-tet-red">TẾT CÁT TƯỜNG (BD5)</div>
+                  <div class="text-[11px] text-tet-red font-semibold mt-0.5">359.000đ <span class="text-stone-400 font-normal">| Sỉ 329K</span></div>
                 </div>
               </a>
             </div>
@@ -480,14 +480,14 @@
         </div>
       </div>
 
-      <!-- SP 5: TẾT CÁT TƯỜNG (MÃ SD5) -->
+      <!-- SP 5: TẾT CÁT TƯỜNG (MÃ BD5) -->
       <div id="product-bd5" onclick="openModalBD5()" class="product-card bg-white rounded-2xl overflow-hidden border border-stone-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" data-category="duoi-600k">
         <div class="relative overflow-hidden aspect-[4/5] bg-stone-100">
-          <img src="images/bd5-cat-tuong.jpg" alt="TẾT CÁT TƯỜNG - Mã SD5" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+          <img src="images/bd5-cat-tuong.jpg?v=bd5" alt="TẾT CÁT TƯỜNG - Mã BD5" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
           <!-- Nhãn Hot & Mã SP trên góc trái -->
           <div class="absolute top-2.5 left-2.5 flex flex-col gap-1">
             <span class="bg-red-700 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">Mới</span>
-            <span class="bg-amber-400 text-tet-darkred text-[10px] font-extrabold px-2 py-0.5 rounded shadow">Mã SD5</span>
+            <span class="bg-amber-400 text-tet-darkred text-[10px] font-extrabold px-2 py-0.5 rounded shadow">Mã BD5</span>
           </div>
           <!-- Badge 5 ảnh -->
           <span class="absolute bottom-2 right-2 bg-stone-900/80 backdrop-blur-sm text-white text-[10px] font-medium px-2 py-0.5 rounded-full flex items-center gap-1 shadow">
@@ -500,10 +500,10 @@
           </h3>
           <div class="mt-2.5 pt-2 border-t border-stone-100 space-y-1">
             <div class="text-xs text-stone-600">
-              Giá lẻ: <strong class="text-stone-900 font-bold text-xs sm:text-sm">589.000đ</strong>
+              Giá lẻ: <strong class="text-stone-900 font-bold text-xs sm:text-sm">359.000đ</strong>
             </div>
             <div class="text-xs font-bold text-tet-red">
-              Giá sỉ: <span class="text-sm sm:text-base font-extrabold">559.000đ</span>
+              Giá sỉ: <span class="text-sm sm:text-base font-extrabold">329.000đ</span>
             </div>
           </div>
         </div>
@@ -1617,10 +1617,10 @@
       document.body.style.overflow = 'hidden';
     }
 
-    // Hàm mở chi tiết Giỏ Quà Tết Cát Tường (Mã: SD5)
+    // Hàm mở chi tiết Giỏ Quà Tết Cát Tường (Mã: BD5)
     function openModalBD5() {
       currentModalImages = [
-        'images/bd5-cat-tuong.jpg',
+        'images/bd5-cat-tuong.jpg?v=bd5',
         'images/bd5-detail-1.jpg',
         'images/bd5-detail-2.jpg',
         'images/bd5-detail-3.jpg',
@@ -1628,11 +1628,11 @@
       ];
       currentImgIndex = 0;
 
-      document.getElementById('modal-code-badge').innerText = 'Mã SD5';
+      document.getElementById('modal-code-badge').innerText = 'Mã BD5';
       document.getElementById('modal-code-badge').className = 'bg-amber-400 text-tet-darkred text-[11px] font-extrabold px-2.5 py-0.5 rounded shadow-sm';
-      document.getElementById('modal-title').innerText = 'TẾT CÁT TƯỜNG (MÃ SD5)';
-      document.getElementById('modal-price-retail').innerText = '589.000đ';
-      document.getElementById('modal-price-wholesale').innerText = '559.000đ';
+      document.getElementById('modal-title').innerText = 'TẾT CÁT TƯỜNG (MÃ BD5)';
+      document.getElementById('modal-price-retail').innerText = '359.000đ';
+      document.getElementById('modal-price-wholesale').innerText = '329.000đ';
 
       const ingredients = [
         'Hộp bánh Goody nhân mứt xoài hãng Bibica',
