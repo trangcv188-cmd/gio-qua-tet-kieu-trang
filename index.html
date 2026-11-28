@@ -152,7 +152,7 @@
           <div class="absolute left-0 top-full pt-1 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 shadow-2xl">
             <div class="bg-white rounded-2xl border border-stone-200/90 py-2 shadow-xl ring-1 ring-black/5 overflow-hidden">
               <div class="px-4 py-2 text-[10px] font-bold text-stone-400 uppercase tracking-wider border-b border-stone-100 bg-stone-50/50">
-                5 Mẫu Giỏ Quà Bình Dân (Dưới 600K)
+                4 Mẫu Giỏ Quà Bình Dân (Dưới 600K)
               </div>
               <a href="#product-bd1" onclick="goToProduct('bd1')" class="flex items-center gap-3 px-4 py-3 hover:bg-red-50 hover:text-tet-red transition border-b border-stone-100/70 group/item">
                 <img src="images/bd1-may-man.jpg" class="w-10 h-10 rounded-lg object-cover border border-stone-200 flex-shrink-0 group-hover/item:border-tet-red">
@@ -173,13 +173,6 @@
                 <div>
                   <div class="font-bold text-xs text-stone-900 group-hover/item:text-tet-red">LINH DƯƠNG THƯỞNG CÁT (BD2)</div>
                   <div class="text-[11px] text-tet-red font-semibold mt-0.5">399.000đ <span class="text-stone-400 font-normal">| Sỉ 379K</span></div>
-                </div>
-              </a>
-              <a href="#product-bd3" onclick="goToProduct('bd3')" class="flex items-center gap-3 px-4 py-3 hover:bg-red-50 hover:text-tet-red transition border-b border-stone-100/70 group/item">
-                <img src="images/bd3-dai-cat-dai-loi.jpg" class="w-10 h-10 rounded-lg object-cover border border-stone-200 flex-shrink-0 group-hover/item:border-tet-red">
-                <div>
-                  <div class="font-bold text-xs text-stone-900 group-hover/item:text-tet-red">ĐẠI CÁT ĐẠI LỢI (BD3)</div>
-                  <div class="text-[11px] text-tet-red font-semibold mt-0.5">409.000đ <span class="text-stone-400 font-normal">| Sỉ 389K</span></div>
                 </div>
               </a>
               <a href="#product-bd4" onclick="goToProduct('bd4')" class="flex items-center gap-3 px-4 py-3 hover:bg-red-50 hover:text-tet-red transition group/item">
@@ -463,32 +456,7 @@
         </div>
       </div>
 
-      <!-- SP 4: ĐẠI CÁT ĐẠI LỢI (MÃ BD3) -->
-      <div id="product-bd3" onclick="openModalBD3()" class="product-card bg-white rounded-2xl overflow-hidden border border-stone-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" data-category="duoi-600k">
-        <div class="relative overflow-hidden aspect-[4/5] bg-stone-100">
-          <img src="images/bd3-dai-cat-dai-loi.jpg" alt="ĐẠI CÁT ĐẠI LỢI - Mã BD3" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
-          <!-- Nhãn Hot & Mã SP trên góc trái -->
-          <div class="absolute top-2.5 left-2.5 flex flex-col gap-1">
-            <span class="bg-red-700 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">Hot</span>
-            <span class="bg-amber-400 text-tet-darkred text-[10px] font-extrabold px-2 py-0.5 rounded shadow">Mã BD3</span>
-          </div>
-        </div>
-        <div class="p-3.5 sm:p-4 text-center flex-1 flex flex-col justify-between bg-white">
-          <h3 class="font-serif text-sm sm:text-base font-bold text-stone-900 group-hover:text-tet-red transition leading-snug">
-            ĐẠI CÁT ĐẠI LỢI
-          </h3>
-          <div class="mt-2.5 pt-2 border-t border-stone-100 space-y-1">
-            <div class="text-xs text-stone-600">
-              Giá lẻ: <strong class="text-stone-900 font-bold text-xs sm:text-sm">409.000đ</strong>
-            </div>
-            <div class="text-xs font-bold text-tet-red">
-              Giá sỉ: <span class="text-sm sm:text-base font-extrabold">389.000đ</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- SP 5: TINH HOA HỘI TỤ (MÃ BD4) -->
+      <!-- SP 4: TINH HOA HỘI TỤ (MÃ BD4) -->
       <div id="product-bd4" onclick="openModalBD4()" class="product-card bg-white rounded-2xl overflow-hidden border border-stone-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" data-category="duoi-600k">
         <div class="relative overflow-hidden aspect-[4/5] bg-stone-100">
           <img src="images/bd4-tinh-hoa-hoi-tu.jpg" alt="TINH HOA HỘI TỤ - Mã BD4" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
@@ -1527,43 +1495,7 @@
       document.body.style.overflow = 'hidden';
     }
 
-    // Hàm mở chi tiết Giỏ Quà Đại Cát Đại Lợi (Mã: BD3)
-    function openModalBD3() {
-      currentModalImages = ['images/bd3-dai-cat-dai-loi.jpg'];
-      currentImgIndex = 0;
 
-      document.getElementById('modal-code-badge').innerText = 'Mã BD3';
-      document.getElementById('modal-code-badge').className = 'bg-amber-400 text-tet-darkred text-[11px] font-extrabold px-2.5 py-0.5 rounded shadow-sm';
-      document.getElementById('modal-title').innerText = 'ĐẠI CÁT ĐẠI LỢI';
-      document.getElementById('modal-price-retail').innerText = '409.000đ';
-      document.getElementById('modal-price-wholesale').innerText = '389.000đ';
-
-      const ingredients = [
-        'Hộp bánh chống lưng Chocopie',
-        'Hộp bánh Danisa',
-        '2 Hộp bánh que Pocky',
-        'Hộp bánh AFC',
-        '2 Hộp bánh khoai tây Slide',
-        '2 Hộp bánh Marine',
-        'Hộp bánh Chocopie'
-      ];
-
-      const listContainer = document.getElementById('modal-ingredients-list');
-      listContainer.innerHTML = `
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5">
-          ${ingredients.map(item => `
-            <div class="flex items-center gap-2 text-stone-800">
-              <i class="fa-solid fa-check text-tet-red text-sm font-bold flex-shrink-0"></i>
-              <span class="font-medium text-xs sm:text-sm leading-snug">${item}</span>
-            </div>
-          `).join('')}
-        </div>
-      `;
-
-      renderModalThumbnails();
-      document.getElementById('product-modal').classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-    }
 
     // Hàm mở chi tiết Giỏ Quà Tinh Hoa Hội Tụ (Mã: BD4)
     function openModalBD4() {
